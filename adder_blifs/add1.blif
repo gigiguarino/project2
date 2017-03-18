@@ -4,13 +4,13 @@
 
 .outputs s[0] cout
 
-.names a[0] b[0] cin s[0]
+.names a[0] b[0] cin cout
 011 1
 101 1
 110 1
 111 1
 
-.names a[0] b[0] cin cout
+.names a[0] b[0] cin s[0]
 001 1
 010 1
 100 1
