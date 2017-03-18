@@ -1,7 +1,7 @@
 #include "circuit.h"
 
 
-int Circuit::createADDModule(const string &input1, const string &input2, const string &cin, const string &output, const string &cout1, unsigned int numBits)
+int Circuit::createADDModule(const string &input1, const string &input2, const string &cin, const string &output, const string &cout, unsigned int numBits)
 {
   Node* node;
   string name;
@@ -37,7 +37,7 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
   }
   
   // create cout node
-  node = createNode(cout1);
+  node = createNode(cout);
  
   // nodes we have
   // input1[]
@@ -132,35 +132,37 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
     // g = d xor c
     // h = f xor e  
       
-    createXOR2Node(a, b, d, numBits);
-    createAND2Node(a, b, e, numBits);
-    createAND2Node(d, c, f, numBits);
-    createXOR2Node(d, c, g, numBits);
-    createXOR2Node(f, e, h, numBits);
+    createXOR2Node(a, b, d);
+    createAND2Node(a, b, e);
+    createAND2Node(d, c, f);
+    createXOR2Node(d, c, g);
+    createXOR2Node(f, e, h);
+
+    if (i == numBits-1)
+    {
+      // create a buffer from the latest h
+      // to cout
+        
+      node = findNode(cout);
+      assert(node != NULL);
+      createBUF1Node(h, node);
+    }
   }
 
-  // create a buffer from the latest h
-  // to cout
-  
-  node = findNode(cout);
-  assert(node != NULL);
-
-  createBUF1Node(h, node);
   return 0;
 }
 
 int Circuit::createSUBModule(const string &input1, const string &input2, const string &output, unsigned int numBits)
 {
-  
   Node* node;
+  string name;
  
   // create input1 nodes
   for (unsigned int i = 0; i < numBits; ++i)
   {
     stringstream sstr;
     sstr << i;
-    string name = input1 + "[" + sstr.str() + "]";
-    
+    name = input1 + "[" + sstr.str() + "]";
     node = createNode(name);
   }
   
@@ -169,8 +171,7 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
   {
     stringstream sstr;
     sstr << i;
-    string name = input2 + "[" + sstr.str() + "]";
-    
+    name = input2 + "[" + sstr.str() + "]";
     node = createNode(name);
   }
   
@@ -179,8 +180,7 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
   {
     stringstream sstr;
     sstr << i;
-    string name = output + "[" + sstr.str() + "]";
-    
+    name = output + "[" + sstr.str() + "]";
     node = createNode(name);
   }
   
@@ -200,7 +200,8 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
   {
     stringstream sstr;
     sstr << i;
-    string name = input2 + "[" + sstr.str() + "]";
+
+    name = input2 + "[" + sstr.str() + "]";
     node1 = findNode(name);
     assert(node1 != NULL);
     
@@ -216,7 +217,8 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
   {
     stringstream sstr;
     sstr << i;
-    string name = "f2[" + sstr.str() + "]";
+    
+    name = "f2[" + sstr.str() + "]";
     node1 = findNode(name);
     assert(node1 != NULL);
     
@@ -240,7 +242,6 @@ int Circuit::createABSModule(const string &input, const string &output, unsigned
   Node* node;
   Node* node1;
   Node* node2;
-  
   string name;
   
   // get input nodes
@@ -267,6 +268,7 @@ int Circuit::createABSModule(const string &input, const string &output, unsigned
   
   stringstream sstr;
   sstr << numBits - 1;
+
   name = input + "[" + sstr.str() + "]";
   node2 = findNode(name);
   assert(node2 != NULL);

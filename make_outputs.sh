@@ -1,4 +1,5 @@
 #!/bin/sh
+chmod +x make_outputs.sh
 
 # remove all old outputs
 cd add_outputs
@@ -19,6 +20,7 @@ do
 echo >> ../add_outputs/add$i.blif
 ./project2 -add $i ../add_outputs/add$i.blif
 done
+
 
 for i in {1..32}
 do
