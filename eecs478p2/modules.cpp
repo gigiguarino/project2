@@ -4,14 +4,14 @@
 int Circuit::createADDModule(const string &input1, const string &input2, const string &cin, const string &output, const string &cout1, unsigned int numBits)
 {
   Node* node;
+  string name;
   
   // create input1 nodes
   for (unsigned int i = 0; i < numBits; ++i)
   {
     stringstream sstr;
     sstr << i;
-    string name = input1 + "[" + sstr.str() + "]";
-    
+    name = input1 + "[" + sstr.str() + "]";
     node = createNode(name);
   }
   
@@ -20,8 +20,7 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
   {
     stringstream sstr;
     sstr << i;
-    string name = input2 + "[" + sstr.str() + "]";
-    
+    name = input2 + "[" + sstr.str() + "]";
     node = createNode(name);
   }
   
@@ -33,89 +32,120 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
   {
     stringstream sstr;
     sstr << i;
-    string name = output + "[" + sstr.str() + "]";
-    
+    name = output + "[" + sstr.str() + "]";
     node = createNode(name);
   }
   
   // create cout node
   node = createNode(cout1);
+ 
+  // nodes we have
+  // input1[]
+  // input2[]
+  // output[]
+  // cin
+  // cout
   
+  // create internal cout nodes
+  for (unsigned int i = 0; i < numBits; ++i)
+  {
+      stringstream sstr;
+      sstr << i;
+      name = "cout_i[" + sstr.str() + "]";
+      node = createNode(name);
+  } 
   
+  // create internal f1, f2, and f3 nodes
+  for (unsigned int i = 0; i < numBits; ++i)
+  {
+      stringstream sstr;
+      sstr << i;
+      name = "f1[" + sstr.str() + "]";
+      node = createNode(name);
+      name = "f2[" + sstr.str() + "]";
+      node = createNode(name);
+      name = "f3[" + sstr.str() + "]";
+      node = createNode(name);
+  }
   
-  // truth table
-  // in1[] in2[] cin[] cout[] out[]
-  //  0 0 0   0 0
-  //  0 0 1   0 1
-  //  0 1 0   0 1
-  //  0 1 1   1 0
-  //  1 0 0   0 1
-  //  1 0 1   1 0
-  //  1 1 0   1 0
-  //  1 1 1   1 1
-  
-  // out --> (xor3(x,y,z) or (and(x,y) and and(y,z)) = d or (e and f) = d or g
-  // cout --> (x or y) and (x or z) and (y or z) = h and i and j = h and k
-  
-  Node* x;
-  Node* y;
-  Node* z;
-  
-  Node* out;
-  
-  Node* f1 = createNode("f1");
-  Node* f2 = createNode("f2");
-  Node* f3 = createNode("f3");
-  Node* f4 = createNode("f4");
-  Node* f5 = createNode("f5");
-  Node* f6 = createNode("f6");
-  Node* f7 = createNode("f7");
-  Node* f8 = createNode("f8");
-  
-  Node* cout_node = findNode(cout1);
-  
-  x = findNode(cin);
-  assert(x != NULL);
+  Node* a; // input1
+  Node* b; // input2
+  Node* c; // cin
+  Node* d; // f1
+  Node* e; // f2
+  Node* f; // f3
+  Node* g; // out
+  Node* h; // cout
 
   for (unsigned int i = 0; i < numBits; ++i)
   {
     stringstream sstr;
-    string name;
-    
     sstr << i;
+
+    stringstream sstr1;
+    sstr1 << i-1;
+
     name = input1 + "[" + sstr.str() + "]";
-    y = findNode(name);
-    assert(y != NULL);
-    
+    a = findNode(name);
+    assert(a != NULL);
+
     name = input2 + "[" + sstr.str() + "]";
-    z = findNode(name);
-    assert(z != NULL);
-    
-    name = output + "[" + sstr.str() + "]";
-    out = findNode(name);
-    assert(out != NULL);
-  
-    createXOR3Node(x,y,z,f1);
-    createAND2Node(x,y,f2);
-    createAND2Node(y,z,f3);
-    createAND2Node(f2,f3,f4);
-    createOR2Node(f1,f4,out);
-    
-    createOR2Node(x,y,f5);
-    createOR2Node(y,z,f6);
-    createOR2Node(x,z,f7);
-    createAND2Node(f5,f6,f8);
-    
-    if (i != numBits-1)
+    b = findNode(name);
+    assert(b != NULL);
+
+    if (i == 0)
     {
-      createAND2Node(f8,f7,x);
+      c = findNode(cin);
+      assert(c != NULL);
     }
+
     else
     {
-      createAND2Node(f8,f7,cout_node);
+      name = "cout_i[" + sstr1.str() + "]";
+      c = findNode(name);
+      assert(c != NULL);
     }
+
+    name = "f1[" + sstr.str() + "]";
+    d = findNode(name);
+    assert(d != NULL);
+
+    name = "f2[" + sstr.str() + "]";
+    e = findNode(name);
+    assert(e != NULL);
+    
+    name = "f3[" + sstr.str() + "]";
+    f = findNode(name);
+    assert(f != NULL);
+
+    name = output + "[" + sstr.str() + "]";
+    g = findNode(name);
+    assert(g != NULL);
+
+    name = "cout_i[" + sstr.str() + "]";
+    h = findNode(name);
+    assert(h != NULL);
+      
+    // d = a xor b
+    // e = a and b
+    // f = d and c
+    // g = d xor c
+    // h = f xor e  
+      
+    createXOR2Node(a, b, d, numBits);
+    createAND2Node(a, b, e, numBits);
+    createAND2Node(d, c, f, numBits);
+    createXOR2Node(d, c, g, numBits);
+    createXOR2Node(f, e, h, numBits);
   }
 
+  // create a buffer from the latest h
+  // to cout
+  
+  node = findNode(cout);
+  assert(node != NULL);
+
+  createBUF1Node(h, node);
   return 0;
 }
 

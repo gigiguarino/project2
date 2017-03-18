@@ -20,8 +20,7 @@ int Circuit::createZERONode(Node* node)
   node->clearTT();
   node->clearFanin();
   
-  node->type = ZERO_NODE;
-  
+  node->type = ZERO_NODE;  
   return 0;
 }
 
@@ -38,7 +37,6 @@ int Circuit::createBUF1Node(Node* input, Node* output)
   output->tt.setNumVars(1);
   
   output->tt.addEntry("1");
-  
   return 0;
 }
 
@@ -56,7 +54,6 @@ int Circuit::createINVNode(Node* input, Node* output)
   output->tt.setNumVars(1);
   
   output->tt.addEntry("0");
-  
   return 0;
 }
 
@@ -76,7 +73,6 @@ int Circuit::createOR2Node(Node* input1, Node* input2, Node* output)
   
   output->tt.addEntry("-1");
   output->tt.addEntry("1-");
-
   return 0;
 }
 
@@ -95,7 +91,6 @@ int Circuit::createAND2Node(Node* input1, Node* input2, Node* output)
   output->tt.setNumVars(2);
   
   output->tt.addEntry("11");
-  
   return 0;
 }
 
@@ -110,14 +105,12 @@ int Circuit::createXOR2Node(Node* input1, Node* input2, Node* output)
   output->clearTT();
   output->clearFanin();
   
-  output->tt.setNumVars(2);
-  
   output->addFanin(input1);
   output->addFanin(input2);
+  output->tt.setNumVars(2);
   
   output->tt.addEntry("10");
   output->tt.addEntry("01");
-  
   return 0;
 }
 
@@ -135,19 +128,11 @@ int Circuit::createXOR3Node(Node* input1, Node* input2, Node* input3, Node* outp
   output->addFanin(input1);
   output->addFanin(input2);
   output->addFanin(input3);
-  
   output->tt.setNumVars(3);
   
-  // this???
   output->tt.addEntry("100");
   output->tt.addEntry("010");
   output->tt.addEntry("001");
-  
-  // or this??
-  // 1 and (2 nor 3)
-  // !1 and (2 xor 3)
-  // !1 and !2 and 3
-  
   return 0;
 }
 
@@ -160,6 +145,12 @@ int Circuit::createMUX2Node(Node* select1, Node* input1, Node* input2, Node* out
   assert(input2 != NULL);
   assert(output != NULL);
   
+  
+  // two input mux
+  // one select bit
+  // 0 selects input1
+  // 1 selects input2
+ 
   output->clearTT();
   output->clearFanin();
   
@@ -171,7 +162,6 @@ int Circuit::createMUX2Node(Node* select1, Node* input1, Node* input2, Node* out
   
   output->tt.addEntry("0-1");
   output->tt.addEntry("11-");
-  
   return 0;
 }
 
@@ -189,8 +179,7 @@ int Circuit::createMUX4Node(Node* select1, Node* select2,
   assert(input3 != NULL);
   assert(input4 != NULL);
   assert(output != NULL);
-  
-
+ 
   // four input mux
   // two select bits
   // 00 selects input1
@@ -210,20 +199,10 @@ int Circuit::createMUX4Node(Node* select1, Node* select2,
   output->addFanin(input2);
   output->addFanin(input1);
   
-  // most significant bit
-  // select2
-  // select1
-  // input4
-  // input3
-  // input2
-  // input1
-  // least significant bit
-  
   output->tt.addEntry("00---1");
   output->tt.addEntry("01--1-");
   output->tt.addEntry("10-1--");
   output->tt.addEntry("111---");
-  
   return 0;
 }
 
