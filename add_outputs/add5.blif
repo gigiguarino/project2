@@ -1,0 +1,59 @@
+.model adder
+
+.inputs a[0] a[1] a[2] a[3] a[4] b[0] b[1] b[2] b[3] b[4] cin 
+
+.outputs cout s[0] s[1] s[2] s[3] s[4] 
+
+.names f8 f7 cout
+11 1
+
+.names cin a[4] b[4] f1
+100 1
+010 1
+001 1
+
+.names cin a[4] f2
+11 1
+
+.names a[4] b[4] f3
+11 1
+
+.names f2 f3 f4
+11 1
+
+.names cin a[4] f5
+-1 1
+1- 1
+
+.names a[4] b[4] f6
+-1 1
+1- 1
+
+.names cin b[4] f7
+-1 1
+1- 1
+
+.names f5 f6 f8
+11 1
+
+.names f1 f4 s[0]
+-1 1
+1- 1
+
+.names f1 f4 s[1]
+-1 1
+1- 1
+
+.names f1 f4 s[2]
+-1 1
+1- 1
+
+.names f1 f4 s[3]
+-1 1
+1- 1
+
+.names f1 f4 s[4]
+-1 1
+1- 1
+
+.end

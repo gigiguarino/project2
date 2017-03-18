@@ -1,0 +1,9 @@
+.model sub1
+
+.inputs a[0] b[0]
+
+.outputs s[0]
+
+# confused on how to do this because 2's complement'
+
+.end

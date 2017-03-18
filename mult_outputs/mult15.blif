@@ -1,0 +1,249 @@
+.model multiplier
+
+.inputs a[0] a[10] a[11] a[12] a[13] a[14] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8] a[9] b[0] b[10] b[11] b[12] b[13] b[14] b[1] b[2] b[3] b[4] b[5] b[6] b[7] b[8] b[9] 
+
+.outputs s[0] s[10] s[11] s[12] s[13] s[14] s[15] s[16] s[17] s[18] s[19] s[1] s[20] s[21] s[22] s[23] s[24] s[25] s[26] s[27] s[28] s[29] s[2] s[3] s[4] s[5] s[6] s[7] s[8] s[9] 
+
+.names ZERO
+
+.names a[14] shifted ZERO add
+0-1 1
+11- 1
+
+.names add[0]
+
+.names add[10]
+
+.names add[11]
+
+.names add[12]
+
+.names add[13]
+
+.names add[14]
+
+.names add[1]
+
+.names add[2]
+
+.names add[3]
+
+.names add[4]
+
+.names add[5]
+
+.names add[6]
+
+.names add[7]
+
+.names add[8]
+
+.names add[9]
+
+.names f8 f7 f1
+11 1
+
+.names ZERO s[14] f2
+11 1
+
+.names s[14] add[14] f3
+11 1
+
+.names f2 f3 f4
+11 1
+
+.names ZERO s[14] f5
+-1 1
+1- 1
+
+.names s[14] add[14] f6
+-1 1
+1- 1
+
+.names ZERO add[14] f7
+-1 1
+1- 1
+
+.names f5 f6 f8
+11 1
+
+.names f1 f4 s[0]
+-1 1
+1- 1
+
+.names f1 f4 s[10]
+-1 1
+1- 1
+
+.names f1 f4 s[11]
+-1 1
+1- 1
+
+.names f1 f4 s[12]
+-1 1
+1- 1
+
+.names f1 f4 s[13]
+-1 1
+1- 1
+
+.names f1 f4 s[14]
+-1 1
+1- 1
+
+.names s[15]
+
+.names s[16]
+
+.names s[17]
+
+.names s[18]
+
+.names s[19]
+
+.names f1 f4 s[1]
+-1 1
+1- 1
+
+.names s[20]
+
+.names s[21]
+
+.names s[22]
+
+.names s[23]
+
+.names s[24]
+
+.names s[25]
+
+.names s[26]
+
+.names s[27]
+
+.names s[28]
+
+.names s[29]
+
+.names f1 f4 s[2]
+-1 1
+1- 1
+
+.names f1 f4 s[3]
+-1 1
+1- 1
+
+.names f1 f4 s[4]
+-1 1
+1- 1
+
+.names f1 f4 s[5]
+-1 1
+1- 1
+
+.names f1 f4 s[6]
+-1 1
+1- 1
+
+.names f1 f4 s[7]
+-1 1
+1- 1
+
+.names f1 f4 s[8]
+-1 1
+1- 1
+
+.names f1 f4 s[9]
+-1 1
+1- 1
+
+.names shifted
+
+.names ZERO shifted[0]
+1 1
+
+.names ZERO shifted[10]
+1 1
+
+.names ZERO shifted[11]
+1 1
+
+.names ZERO shifted[12]
+1 1
+
+.names ZERO shifted[13]
+1 1
+
+.names a[0] shifted[14]
+1 1
+
+.names a[1] shifted[15]
+1 1
+
+.names a[2] shifted[16]
+1 1
+
+.names a[3] shifted[17]
+1 1
+
+.names a[4] shifted[18]
+1 1
+
+.names a[5] shifted[19]
+1 1
+
+.names ZERO shifted[1]
+1 1
+
+.names a[6] shifted[20]
+1 1
+
+.names a[7] shifted[21]
+1 1
+
+.names a[8] shifted[22]
+1 1
+
+.names a[9] shifted[23]
+1 1
+
+.names a[10] shifted[24]
+1 1
+
+.names a[11] shifted[25]
+1 1
+
+.names a[12] shifted[26]
+1 1
+
+.names a[13] shifted[27]
+1 1
+
+.names a[14] shifted[28]
+1 1
+
+.names ZERO shifted[2]
+1 1
+
+.names ZERO shifted[3]
+1 1
+
+.names ZERO shifted[4]
+1 1
+
+.names ZERO shifted[5]
+1 1
+
+.names ZERO shifted[6]
+1 1
+
+.names ZERO shifted[7]
+1 1
+
+.names ZERO shifted[8]
+1 1
+
+.names ZERO shifted[9]
+1 1
+
+.end

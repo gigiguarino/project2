@@ -1,0 +1,459 @@
+.model multiplier
+
+.inputs a[0] a[10] a[11] a[12] a[13] a[14] a[15] a[16] a[17] a[18] a[19] a[1] a[20] a[21] a[22] a[23] a[24] a[25] a[26] a[27] a[28] a[29] a[2] a[3] a[4] a[5] a[6] a[7] a[8] a[9] b[0] b[10] b[11] b[12] b[13] b[14] b[15] b[16] b[17] b[18] b[19] b[1] b[20] b[21] b[22] b[23] b[24] b[25] b[26] b[27] b[28] b[29] b[2] b[3] b[4] b[5] b[6] b[7] b[8] b[9] 
+
+.outputs s[0] s[10] s[11] s[12] s[13] s[14] s[15] s[16] s[17] s[18] s[19] s[1] s[20] s[21] s[22] s[23] s[24] s[25] s[26] s[27] s[28] s[29] s[2] s[30] s[31] s[32] s[33] s[34] s[35] s[36] s[37] s[38] s[39] s[3] s[40] s[41] s[42] s[43] s[44] s[45] s[46] s[47] s[48] s[49] s[4] s[50] s[51] s[52] s[53] s[54] s[55] s[56] s[57] s[58] s[59] s[5] s[6] s[7] s[8] s[9] 
+
+.names ZERO
+
+.names a[29] shifted ZERO add
+0-1 1
+11- 1
+
+.names add[0]
+
+.names add[10]
+
+.names add[11]
+
+.names add[12]
+
+.names add[13]
+
+.names add[14]
+
+.names add[15]
+
+.names add[16]
+
+.names add[17]
+
+.names add[18]
+
+.names add[19]
+
+.names add[1]
+
+.names add[20]
+
+.names add[21]
+
+.names add[22]
+
+.names add[23]
+
+.names add[24]
+
+.names add[25]
+
+.names add[26]
+
+.names add[27]
+
+.names add[28]
+
+.names add[29]
+
+.names add[2]
+
+.names add[3]
+
+.names add[4]
+
+.names add[5]
+
+.names add[6]
+
+.names add[7]
+
+.names add[8]
+
+.names add[9]
+
+.names f8 f7 f1
+11 1
+
+.names ZERO s[29] f2
+11 1
+
+.names s[29] add[29] f3
+11 1
+
+.names f2 f3 f4
+11 1
+
+.names ZERO s[29] f5
+-1 1
+1- 1
+
+.names s[29] add[29] f6
+-1 1
+1- 1
+
+.names ZERO add[29] f7
+-1 1
+1- 1
+
+.names f5 f6 f8
+11 1
+
+.names f1 f4 s[0]
+-1 1
+1- 1
+
+.names f1 f4 s[10]
+-1 1
+1- 1
+
+.names f1 f4 s[11]
+-1 1
+1- 1
+
+.names f1 f4 s[12]
+-1 1
+1- 1
+
+.names f1 f4 s[13]
+-1 1
+1- 1
+
+.names f1 f4 s[14]
+-1 1
+1- 1
+
+.names f1 f4 s[15]
+-1 1
+1- 1
+
+.names f1 f4 s[16]
+-1 1
+1- 1
+
+.names f1 f4 s[17]
+-1 1
+1- 1
+
+.names f1 f4 s[18]
+-1 1
+1- 1
+
+.names f1 f4 s[19]
+-1 1
+1- 1
+
+.names f1 f4 s[1]
+-1 1
+1- 1
+
+.names f1 f4 s[20]
+-1 1
+1- 1
+
+.names f1 f4 s[21]
+-1 1
+1- 1
+
+.names f1 f4 s[22]
+-1 1
+1- 1
+
+.names f1 f4 s[23]
+-1 1
+1- 1
+
+.names f1 f4 s[24]
+-1 1
+1- 1
+
+.names f1 f4 s[25]
+-1 1
+1- 1
+
+.names f1 f4 s[26]
+-1 1
+1- 1
+
+.names f1 f4 s[27]
+-1 1
+1- 1
+
+.names f1 f4 s[28]
+-1 1
+1- 1
+
+.names f1 f4 s[29]
+-1 1
+1- 1
+
+.names f1 f4 s[2]
+-1 1
+1- 1
+
+.names s[30]
+
+.names s[31]
+
+.names s[32]
+
+.names s[33]
+
+.names s[34]
+
+.names s[35]
+
+.names s[36]
+
+.names s[37]
+
+.names s[38]
+
+.names s[39]
+
+.names f1 f4 s[3]
+-1 1
+1- 1
+
+.names s[40]
+
+.names s[41]
+
+.names s[42]
+
+.names s[43]
+
+.names s[44]
+
+.names s[45]
+
+.names s[46]
+
+.names s[47]
+
+.names s[48]
+
+.names s[49]
+
+.names f1 f4 s[4]
+-1 1
+1- 1
+
+.names s[50]
+
+.names s[51]
+
+.names s[52]
+
+.names s[53]
+
+.names s[54]
+
+.names s[55]
+
+.names s[56]
+
+.names s[57]
+
+.names s[58]
+
+.names s[59]
+
+.names f1 f4 s[5]
+-1 1
+1- 1
+
+.names f1 f4 s[6]
+-1 1
+1- 1
+
+.names f1 f4 s[7]
+-1 1
+1- 1
+
+.names f1 f4 s[8]
+-1 1
+1- 1
+
+.names f1 f4 s[9]
+-1 1
+1- 1
+
+.names shifted
+
+.names ZERO shifted[0]
+1 1
+
+.names ZERO shifted[10]
+1 1
+
+.names ZERO shifted[11]
+1 1
+
+.names ZERO shifted[12]
+1 1
+
+.names ZERO shifted[13]
+1 1
+
+.names ZERO shifted[14]
+1 1
+
+.names ZERO shifted[15]
+1 1
+
+.names ZERO shifted[16]
+1 1
+
+.names ZERO shifted[17]
+1 1
+
+.names ZERO shifted[18]
+1 1
+
+.names ZERO shifted[19]
+1 1
+
+.names ZERO shifted[1]
+1 1
+
+.names ZERO shifted[20]
+1 1
+
+.names ZERO shifted[21]
+1 1
+
+.names ZERO shifted[22]
+1 1
+
+.names ZERO shifted[23]
+1 1
+
+.names ZERO shifted[24]
+1 1
+
+.names ZERO shifted[25]
+1 1
+
+.names ZERO shifted[26]
+1 1
+
+.names ZERO shifted[27]
+1 1
+
+.names ZERO shifted[28]
+1 1
+
+.names a[0] shifted[29]
+1 1
+
+.names ZERO shifted[2]
+1 1
+
+.names a[1] shifted[30]
+1 1
+
+.names a[2] shifted[31]
+1 1
+
+.names a[3] shifted[32]
+1 1
+
+.names a[4] shifted[33]
+1 1
+
+.names a[5] shifted[34]
+1 1
+
+.names a[6] shifted[35]
+1 1
+
+.names a[7] shifted[36]
+1 1
+
+.names a[8] shifted[37]
+1 1
+
+.names a[9] shifted[38]
+1 1
+
+.names a[10] shifted[39]
+1 1
+
+.names ZERO shifted[3]
+1 1
+
+.names a[11] shifted[40]
+1 1
+
+.names a[12] shifted[41]
+1 1
+
+.names a[13] shifted[42]
+1 1
+
+.names a[14] shifted[43]
+1 1
+
+.names a[15] shifted[44]
+1 1
+
+.names a[16] shifted[45]
+1 1
+
+.names a[17] shifted[46]
+1 1
+
+.names a[18] shifted[47]
+1 1
+
+.names a[19] shifted[48]
+1 1
+
+.names a[20] shifted[49]
+1 1
+
+.names ZERO shifted[4]
+1 1
+
+.names a[21] shifted[50]
+1 1
+
+.names a[22] shifted[51]
+1 1
+
+.names a[23] shifted[52]
+1 1
+
+.names a[24] shifted[53]
+1 1
+
+.names a[25] shifted[54]
+1 1
+
+.names a[26] shifted[55]
+1 1
+
+.names a[27] shifted[56]
+1 1
+
+.names a[28] shifted[57]
+1 1
+
+.names a[29] shifted[58]
+1 1
+
+.names ZERO shifted[5]
+1 1
+
+.names ZERO shifted[6]
+1 1
+
+.names ZERO shifted[7]
+1 1
+
+.names ZERO shifted[8]
+1 1
+
+.names ZERO shifted[9]
+1 1
+
+.end

@@ -1,0 +1,44 @@
+.model mult3
+
+.inputs a[0] a[1] a[2] b[0] b[1] b[2]
+
+.outputs s[0] s[1] s[2] s[3] s[4] s[5] s[6]
+
+.names a[0] b[0] p0[0]
+11 1
+
+.names a[0] b[1] p0[1]
+11 1
+
+.names a[0] b[2] p0[2]
+11 1
+
+.names a[1] b[0] p1[0]
+11 1
+
+.names a[1] b[1] p1[1]
+11 1
+
+.names a[1] b[2] p1[2]
+11 1
+
+.names a[2] b[0] p2[0]
+11 1
+
+.names a[2] b[1] p2[1]
+11 1
+
+.names a[2] b[2] p2[2]
+11 1
+
+.names cin
+0
+
+.names p0[0] s[0]
+1 1
+
+
+
+
+.end
+

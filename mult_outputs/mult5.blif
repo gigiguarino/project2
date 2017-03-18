@@ -1,0 +1,109 @@
+.model multiplier
+
+.inputs a[0] a[1] a[2] a[3] a[4] b[0] b[1] b[2] b[3] b[4] 
+
+.outputs s[0] s[1] s[2] s[3] s[4] s[5] s[6] s[7] s[8] s[9] 
+
+.names ZERO
+
+.names a[4] shifted ZERO add
+0-1 1
+11- 1
+
+.names add[0]
+
+.names add[1]
+
+.names add[2]
+
+.names add[3]
+
+.names add[4]
+
+.names f8 f7 f1
+11 1
+
+.names ZERO s[4] f2
+11 1
+
+.names s[4] add[4] f3
+11 1
+
+.names f2 f3 f4
+11 1
+
+.names ZERO s[4] f5
+-1 1
+1- 1
+
+.names s[4] add[4] f6
+-1 1
+1- 1
+
+.names ZERO add[4] f7
+-1 1
+1- 1
+
+.names f5 f6 f8
+11 1
+
+.names f1 f4 s[0]
+-1 1
+1- 1
+
+.names f1 f4 s[1]
+-1 1
+1- 1
+
+.names f1 f4 s[2]
+-1 1
+1- 1
+
+.names f1 f4 s[3]
+-1 1
+1- 1
+
+.names f1 f4 s[4]
+-1 1
+1- 1
+
+.names s[5]
+
+.names s[6]
+
+.names s[7]
+
+.names s[8]
+
+.names s[9]
+
+.names shifted
+
+.names ZERO shifted[0]
+1 1
+
+.names ZERO shifted[1]
+1 1
+
+.names ZERO shifted[2]
+1 1
+
+.names ZERO shifted[3]
+1 1
+
+.names a[0] shifted[4]
+1 1
+
+.names a[1] shifted[5]
+1 1
+
+.names a[2] shifted[6]
+1 1
+
+.names a[3] shifted[7]
+1 1
+
+.names a[4] shifted[8]
+1 1
+
+.end

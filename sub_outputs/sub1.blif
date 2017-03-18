@@ -1,0 +1,57 @@
+.model subtractor
+
+.inputs a[0] b[0] 
+
+.outputs s[0] 
+
+.names ONE
+1
+
+.names ONE[0]
+
+.names ZERO
+
+.names ZERO f4[0] ONE[0] f1
+100 1
+010 1
+001 1
+
+.names b[0] f1[0]
+0 1
+
+.names ZERO f4[0] f2
+11 1
+
+.names f1 f4 f2[0]
+-1 1
+1- 1
+
+.names f8 f7 f3
+11 1
+
+.names f2 f3 f4
+11 1
+
+.names f2[0] f4[0]
+0 1
+
+.names ZERO f4[0] f5
+-1 1
+1- 1
+
+.names f4[0] ONE[0] f6
+-1 1
+1- 1
+
+.names ZERO ONE[0] f7
+-1 1
+1- 1
+
+.names f5 f6 f8
+11 1
+
+.names f1 f4 s[0]
+-1 1
+1- 1
+
+.end
