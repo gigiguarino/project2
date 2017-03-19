@@ -1,0 +1,18 @@
+
+datapath calls:
+- mult twice
+- sub once
+- abs once
+
+add calls:
+- nothing
+
+sub calls:
+- add once
+
+abs calls:
+- add once
+
+mult calls:
+- add numBits times
+

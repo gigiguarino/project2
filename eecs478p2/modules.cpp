@@ -1,6 +1,14 @@
 #include "circuit.h"
 
 
+// things to consider:
+// in datapath module
+// we call mult twice
+// which also calls add
+// we could be creating multiple nodes with the same names
+// might need a way to differentiate between instances of nodes
+
+
 int Circuit::createADDModule(const string &input1, const string &input2, const string &cin, const string &output, const string &cout, unsigned int numBits)
 {
   Node* node;
@@ -63,7 +71,7 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
   {
       stringstream sstr;
       sstr << i;
-      name = "h[" + sstr.str() + "]";
+      name = output + "_h[" + sstr.str() + "]";
       node = createNode(name);
   } 
   
@@ -72,11 +80,11 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
   {
       stringstream sstr;
       sstr << i;
-      name = "d[" + sstr.str() + "]";
+      name = output + "_d[" + sstr.str() + "]";
       node = createNode(name);
-      name = "e[" + sstr.str() + "]";
+      name = output + "_e[" + sstr.str() + "]";
       node = createNode(name);
-      name = "f[" + sstr.str() + "]";
+      name = output + "_f[" + sstr.str() + "]";
       node = createNode(name);
   }
   
@@ -113,20 +121,20 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
 
     else
     {
-      name = "h[" + sstr1.str() + "]";
+      name = output + "_h[" + sstr1.str() + "]";
       c = findNode(name);
       assert(c != NULL);
     }
 
-    name = "d[" + sstr.str() + "]";
+    name = output + "_d[" + sstr.str() + "]";
     d = findNode(name);
     assert(d != NULL);
 
-    name = "e[" + sstr.str() + "]";
+    name = output + "_e[" + sstr.str() + "]";
     e = findNode(name);
     assert(e != NULL);
     
-    name = "f[" + sstr.str() + "]";
+    name = output + "_f[" + sstr.str() + "]";
     f = findNode(name);
     assert(f != NULL);
 
@@ -134,7 +142,7 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
     g = findNode(name);
     assert(g != NULL);
 
-    name = "h[" + sstr.str() + "]";
+    name = output + "_h[" + sstr.str() + "]";
     h = findNode(name);
     assert(h != NULL);
       
@@ -283,38 +291,46 @@ int Circuit::createABSModule(const string &input, const string &output, unsigned
   node2 = findNode(name);
   assert(node2 != NULL);
   
-  Node* zeroNode = createNode(output + "_ZERO");
+  Node* zeroNode = createNode("ZERO");
   createZERONode(zeroNode);
   
   for (unsigned int i = 0; i < numBits-1; ++i)
   {
     stringstream sstr;
     sstr << i;
-    name = output + "_f1[" + sstr.str() + "]";
+    name = "f1[" + sstr.str() + "]";
     node1 = createNode(name);
     
-    sstr << i;
-    string name = input + "[" + sstr.str() + "]";
+    name = input + "[" + sstr.str() + "]";
     node = findNode(name);
     assert(node != NULL);
     
     createXOR2Node(node, node2, node1);
   }
   
-  sstr << 0;
-  name = output + "_f2[" + sstr.str() + "]";
-  node = createNode(name);
-  
-  for (unsigned int i = 1; i < numBits; ++i)
+  // create number to add to the xored number
+  // first bit of input gets added
+  for (unsigned int i = 0; i < numBits; ++i)
   {
     stringstream sstr;
     sstr << i;
-    name = output + "_f2[" + sstr.str() + "]";
+    
+    name = "f2[" + sstr.str() + "]";
     node = createNode(name);
-    createZERONode(node);
+    
+    if (i == 0)
+    {
+      createBUF1Node(node2, node);
+    }
+    
+    else
+    {
+      createZERONode(node);
+    }
   }
   
-  createADDModule(output + "_f1", output + "_f2", output + "_ZERO", "output", "cout", numBits);
+  // add xored number with first bit to create output
+  createADDModule("f1", "f2", "ZERO", output, "dc", numBits);
   
   return 0;
 }
@@ -322,14 +338,19 @@ int Circuit::createABSModule(const string &input, const string &output, unsigned
 int Circuit::createMULTModule(const string &input1, const string &input2, const string &output, unsigned int numBits)
 {
   Node* node;
+  string name;
   
   // create input1 nodes
   for (unsigned int i = 0; i < numBits; ++i)
   {
     stringstream sstr;
     sstr << i;
-    string name = input1 + "[" + sstr.str() + "]";
-    node = createNode(name);
+    name = input1 + "[" + sstr.str() + "]";
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // create input2 nodes
@@ -337,8 +358,12 @@ int Circuit::createMULTModule(const string &input1, const string &input2, const 
   {
     stringstream sstr;
     sstr << i;
-    string name = input2 + "[" + sstr.str() + "]";
-    node = createNode(name);
+    name = input2 + "[" + sstr.str() + "]";
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // create output nodes
@@ -346,27 +371,116 @@ int Circuit::createMULTModule(const string &input1, const string &input2, const 
   {
     stringstream sstr;
     sstr << i;
-    string name = output + "[" + sstr.str() + "]";
-    node = createNode(name);
+    name = output + "[" + sstr.str() + "]";
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
-  Node* shifted = createNode("shifted");
-  Node* add = createNode("add");
+  Node* node1;
+  Node* node2;
   Node* zeroNode = createNode("ZERO");
   createZERONode(zeroNode);
   
   for (unsigned int i = 0; i < numBits; ++i)
   {
+    stringstream sstr1;
+    sstr1 << i;
+    
+    // create in_sum nodes
+    // in_sum will be added to every iteration
+    if (i == 0)
+    {
+      for (unsigned int j = 0; j < numBits*2; ++j)
+      {
+        stringstream sstr2;
+        sstr2 << j;
+        
+        name = output + "_in_sum" + sstr1.str() + "[" + sstr2.str() + "]";
+        node = createNode(name);
+      }
+    }
+    
+    // take bit of second input
+    name = input2 + "[" + sstr1.str() + "]";
+    node1 = findNode(name);
+    assert(node1 != NULL);
+    
+    for (unsigned int j = 0; j < numBits; ++j)
+    {
+      stringstream sstr2;
+      sstr2 << j;
+      
+      name = input1 + "[" + sstr2.str() + "]";
+      node2 = findNode(name);
+      assert(node2 != NULL);
+      
+      name = "pp" + sstr1.str() + "[" + sstr2.str() + "]";
+      node = createNode(name);
+      
+      // and second input's bit with each of first inputs bits
+      // this creates our partial product
+      createAND2Node(node1, node2, node);
+    }
+    
+    // shift the partial product the desired amount
+    createSHIFTModule("pp" + sstr1.str(), "pps" + sstr1.str(), numBits, i);
+    
+    // fill remaining parts of shifted nodes
+    // with zeros
+    for (unsigned int j = numBits; j < numBits*2; ++j)
+    {
+      stringstream sstr2;
+      sstr2 << j;
+      
+      name = "pps" + sstr1.str() + "[" + sstr2.str() + "]";
+      node = createNode(name);
+      createZERONode(node);
+    }
+    
+    // add partial product to sum
+    createADDModule("pps" + sstr1.str(), output + "_in_sum" + sstr1.str(), "ZERO", output + "_out_sum" + sstr1.str(), "dc" + sstr1.str(), numBits*2);
+    
+    // create buffers from out_sum to in_sum
+    for (unsigned int j = 0; j < numBits*2; ++j)
+    {
+      stringstream sstr2;
+      sstr2 << j;
+      
+      stringstream sstr3;
+      sstr3 << i + 1;
+      
+      name = output + "_out_sum" + sstr1.str() + "[" + sstr2.str() + "]";
+      node1 = findNode(name);
+      assert(node1 != NULL);
+      
+      name = output + "_in_sum" + sstr3.str() + "[" + sstr2.str() + "]";
+      node2 = createNode(name);
+      
+      createBUF1Node(node1, node2);
+    }
+  }
+  
+  // create buffer from out_sum[numBits-1] to output
+  for (unsigned int i = 0; i < numBits*2; ++i)
+  {
     stringstream sstr;
     sstr << i;
-    string name = input1 + "[" + sstr.str() + "]";
+    
+    stringstream sstr1;
+    sstr1 << numBits-1;
+    
+    name = output + "_out_sum" + sstr1.str() + "[" + sstr.str() + "]";
     node = findNode(name);
+    assert(node != NULL);
     
-    createSHIFTModule(input1, "shifted", numBits, i);
-    shifted = findNode("shifted");
+    name = output + "[" + sstr.str() + "]";
+    node1 = findNode(name);
+    assert(node != NULL);
     
-    createMUX2Node(node, zeroNode, shifted, add);
-    createADDModule(output, "add", "ZERO", output, "f1", numBits);
+    createBUF1Node(node, node1);
   }
   
   return 0;

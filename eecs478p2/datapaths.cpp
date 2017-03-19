@@ -111,7 +111,6 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
   
   node = findNode("diff[19]");
   assert(node != NULL);
-
   
   Node* node3;
   
