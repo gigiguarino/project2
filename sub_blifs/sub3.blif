@@ -4,32 +4,14 @@
 
 .outputs s[0] s[1] s[2]
 
-.names b[0] bc[0]
+.names b[0] c[0]
 0 1
 
-.names b[1] bc[1]
+.names b[1] c[1]
 0 1
 
-.names b[2] bc[2]
+.names b[2] c[2]
 0 1
-
-.names bc[0] bc[1] bc[2] c[0]
-011 1
-100 1
-101 1
-110 1
-
-.names bc[0] bc[1] bc[2] c[1]
-001 1
-010 1
-101 1
-110 1
-
-.names bc[0] bc[1] bc[2] c[2]
-000 1
-010 1
-100 1
-110 1
 
 .names cin
 1

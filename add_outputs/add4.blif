@@ -4,78 +4,78 @@
 
 .outputs cout s[0] s[1] s[2] s[3] 
 
-.names s_cout_i[3] cout
+.names h[3] cout
 1 1
 
-.names s_add_f1[0] cin s[0]
+.names a[0] b[0] d[0]
 10 1
 01 1
 
-.names s_add_f1[1] s_cout_i[0] s[1]
+.names a[1] b[1] d[1]
 10 1
 01 1
 
-.names s_add_f1[2] s_cout_i[1] s[2]
+.names a[2] b[2] d[2]
 10 1
 01 1
 
-.names s_add_f1[3] s_cout_i[2] s[3]
+.names a[3] b[3] d[3]
 10 1
 01 1
 
-.names a[0] b[0] s_add_f1[0]
-10 1
-01 1
-
-.names a[1] b[1] s_add_f1[1]
-10 1
-01 1
-
-.names a[2] b[2] s_add_f1[2]
-10 1
-01 1
-
-.names a[3] b[3] s_add_f1[3]
-10 1
-01 1
-
-.names a[0] b[0] s_add_f2[0]
+.names a[0] b[0] e[0]
 11 1
 
-.names a[1] b[1] s_add_f2[1]
+.names a[1] b[1] e[1]
 11 1
 
-.names a[2] b[2] s_add_f2[2]
+.names a[2] b[2] e[2]
 11 1
 
-.names a[3] b[3] s_add_f2[3]
+.names a[3] b[3] e[3]
 11 1
 
-.names s_add_f1[0] cin s_add_f3[0]
+.names d[0] cin f[0]
 11 1
 
-.names s_add_f1[1] s_cout_i[0] s_add_f3[1]
+.names d[1] h[0] f[1]
 11 1
 
-.names s_add_f1[2] s_cout_i[1] s_add_f3[2]
+.names d[2] h[1] f[2]
 11 1
 
-.names s_add_f1[3] s_cout_i[2] s_add_f3[3]
+.names d[3] h[2] f[3]
 11 1
 
-.names s_add_f3[0] s_add_f2[0] s_cout_i[0]
+.names f[0] e[0] h[0]
+-1 1
+1- 1
+
+.names f[1] e[1] h[1]
+-1 1
+1- 1
+
+.names f[2] e[2] h[2]
+-1 1
+1- 1
+
+.names f[3] e[3] h[3]
+-1 1
+1- 1
+
+.names d[0] cin s[0]
 10 1
 01 1
 
-.names s_add_f3[1] s_add_f2[1] s_cout_i[1]
+.names d[1] h[0] s[1]
 10 1
 01 1
 
-.names s_add_f3[2] s_add_f2[2] s_cout_i[2]
+.names d[2] h[1] s[2]
 10 1
 01 1
 
-.names s_add_f3[3] s_add_f2[3] s_cout_i[3]
+.names d[3] h[2] s[3]
 10 1
 01 1
 
