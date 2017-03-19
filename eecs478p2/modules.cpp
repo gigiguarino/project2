@@ -12,7 +12,11 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
     stringstream sstr;
     sstr << i;
     name = input1 + "[" + sstr.str() + "]";
-    node = createNode(name);
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // create input2 nodes
@@ -21,7 +25,11 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
     stringstream sstr;
     sstr << i;
     name = input2 + "[" + sstr.str() + "]";
-    node = createNode(name);
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // create cin node
@@ -33,7 +41,11 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
     stringstream sstr;
     sstr << i;
     name = output + "[" + sstr.str() + "]";
-    node = createNode(name);
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // create cout node
@@ -51,7 +63,7 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
   {
       stringstream sstr;
       sstr << i;
-      name = "cout_i[" + sstr.str() + "]";
+      name = output + "_cout_i[" + sstr.str() + "]";
       node = createNode(name);
   } 
   
@@ -60,11 +72,11 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
   {
       stringstream sstr;
       sstr << i;
-      name = "add_f1[" + sstr.str() + "]";
+      name = output + "_add_f1[" + sstr.str() + "]";
       node = createNode(name);
-      name = "add_f2[" + sstr.str() + "]";
+      name = output + "_add_f2[" + sstr.str() + "]";
       node = createNode(name);
-      name = "add_f3[" + sstr.str() + "]";
+      name = output + "_add_f3[" + sstr.str() + "]";
       node = createNode(name);
   }
   
@@ -101,20 +113,20 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
 
     else
     {
-      name = "cout_i[" + sstr1.str() + "]";
+      name = output + "_cout_i[" + sstr1.str() + "]";
       c = findNode(name);
       assert(c != NULL);
     }
 
-    name = "add_f1[" + sstr.str() + "]";
+    name = output + "_add_f1[" + sstr.str() + "]";
     d = findNode(name);
     assert(d != NULL);
 
-    name = "add_f2[" + sstr.str() + "]";
+    name = output + "_add_f2[" + sstr.str() + "]";
     e = findNode(name);
     assert(e != NULL);
     
-    name = "add_f3[" + sstr.str() + "]";
+    name = output + "_add_f3[" + sstr.str() + "]";
     f = findNode(name);
     assert(f != NULL);
 
@@ -122,7 +134,7 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
     g = findNode(name);
     assert(g != NULL);
 
-    name = "cout_i[" + sstr.str() + "]";
+    name = output + "_cout_i[" + sstr.str() + "]";
     h = findNode(name);
     assert(h != NULL);
       
@@ -163,7 +175,11 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
     stringstream sstr;
     sstr << i;
     name = input1 + "[" + sstr.str() + "]";
-    node = createNode(name);
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // create input2 nodes
@@ -172,7 +188,11 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
     stringstream sstr;
     sstr << i;
     name = input2 + "[" + sstr.str() + "]";
-    node = createNode(name);
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // create output nodes
@@ -181,7 +201,11 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
     stringstream sstr;
     sstr << i;
     name = output + "[" + sstr.str() + "]";
-    node = createNode(name);
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // create an adder module that adds the inverse version of input2 and input1 and 1
@@ -189,10 +213,10 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
   Node* node1;
   Node* node2;
   
-  Node* oneNode = createNode("ONE");
+  Node* oneNode = createNode(output + "_ONE");
   createONENode(oneNode);
   
-  Node* zeroNode = createNode("ZERO");
+  Node* zeroNode = createNode(output + "_ZERO");
   createZERONode(zeroNode);
   
   // create inverse input2 nodes
@@ -205,7 +229,7 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
     node1 = findNode(name);
     assert(node1 != NULL);
     
-    name = "sub_f1[" + sstr.str() + "]";
+    name = output + "_sub_f1[" + sstr.str() + "]";
     node2 = createNode(name);
     
     createINVNode(node1,node2);
@@ -215,7 +239,7 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
   {
     stringstream sstr;
     sstr << i;
-    name = "sub_f6[" + sstr.str() + "]";
+    name = output + "_sub_f6[" + sstr.str() + "]";
     node1 = createNode(name);
 
     name = input1 + "[" + sstr.str() + "]";
@@ -225,18 +249,18 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
     createBUF1Node(node2, node1);
   }
   
-  createADDModule("sub_f1", "subf6", "ONE", "sub_f2", "sub_f3", numBits);
+  createADDModule(output + "_sub_f1", output + "_subf6", output + "_ONE", "sub_f2", "sub_f3", numBits);
   
   for (unsigned int i = 0; i < numBits; ++i)
   {
     stringstream sstr;
     sstr << i;
     
-    name = "sub_f2[" + sstr.str() + "]";
+    name = output + "_sub_f2[" + sstr.str() + "]";
     node1 = findNode(name);
     assert(node1 != NULL);
     
-    name = "sub_f4[" + sstr.str() + "]";
+    name = output + "_sub_f4[" + sstr.str() + "]";
     node2 = createNode(name);
     
     
@@ -248,12 +272,12 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
   {
     stringstream sstr;
     sstr << i;
-    name = "zeros[" + sstr.str() + "]";
+    name = output + "_zeros[" + sstr.str() + "]";
     node = createNode(name);
     createZERONode(node);
   }
   
-  createADDModule("sub_f4", "zeros", "ONE", "out", "sub_f5", numBits);
+  createADDModule(output + "_sub_f4", output + "_zeros", "ONE", "out", "sub_f5", numBits);
   
   for (unsigned int i = 0; i < numBits; ++i)
   {
@@ -289,7 +313,11 @@ int Circuit::createABSModule(const string &input, const string &output, unsigned
     stringstream sstr;
     sstr << i;
     name = input + "[" + sstr.str() + "]";
-    node = createNode(name);
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // get output nodes
@@ -298,7 +326,11 @@ int Circuit::createABSModule(const string &input, const string &output, unsigned
     stringstream sstr;
     sstr << i;
     name = output + "[" + sstr.str() + "]";
-    node = createNode(name);
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // take first bit
@@ -312,14 +344,14 @@ int Circuit::createABSModule(const string &input, const string &output, unsigned
   node2 = findNode(name);
   assert(node2 != NULL);
   
-  Node* zeroNode = createNode("ZERO");
+  Node* zeroNode = createNode(output + "_ZERO");
   createZERONode(zeroNode);
   
   for (unsigned int i = 0; i < numBits-1; ++i)
   {
     stringstream sstr;
     sstr << i;
-    name = "f1[" + sstr.str() + "]";
+    name = output + "_f1[" + sstr.str() + "]";
     node1 = createNode(name);
     
     sstr << i;
@@ -331,19 +363,19 @@ int Circuit::createABSModule(const string &input, const string &output, unsigned
   }
   
   sstr << 0;
-  name = "f2[" + sstr.str() + "]";
+  name = output + "_f2[" + sstr.str() + "]";
   node = createNode(name);
   
   for (unsigned int i = 1; i < numBits; ++i)
   {
     stringstream sstr;
     sstr << i;
-    name = "f2[" + sstr.str() + "]";
+    name = output + "_f2[" + sstr.str() + "]";
     node = createNode(name);
     createZERONode(node);
   }
   
-  createADDModule("f1", "f2", "ZERO", "output", "cout", numBits);
+  createADDModule(output + "_f1", output + "_f2", output + "_ZERO", "output", "cout", numBits);
   
   return 0;
 }
@@ -410,8 +442,11 @@ int Circuit::createSHIFTModule(const string &input, const string &output, unsign
     stringstream sstr;
     sstr << i;
     string name = input + "[" + sstr.str() + "]";
-    
-    node = createNode(name);
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // create output nodes
@@ -420,8 +455,11 @@ int Circuit::createSHIFTModule(const string &input, const string &output, unsign
     stringstream sstr;
     sstr << i;
     string name = output + "[" + sstr.str() + "]";
-    
-    node = createNode(name);
+    node = findNode(name);
+    if (node == NULL)
+    {
+      node = createNode(name);
+    }
   }
   
   // assign '0's to the least numShift bits
