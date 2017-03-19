@@ -7,262 +7,430 @@
 .names ONE
 1
 
-.names ONE[0]
-
-.names ONE[10]
-
-.names ONE[1]
-
-.names ONE[2]
-
-.names ONE[3]
-
-.names ONE[4]
-
-.names ONE[5]
-
-.names ONE[6]
-
-.names ONE[7]
-
-.names ONE[8]
-
-.names ONE[9]
-
 .names ZERO
 
-.names f3[0] f2[0] cout_i[0]
+.names sub_f4[0] zeros[0] add_f1[0]
 10 1
 01 1
 
-.names f3[10] f2[10] cout_i[10]
+.names sub_f4[10] zeros[10] add_f1[10]
 10 1
 01 1
 
-.names f3[1] f2[1] cout_i[1]
+.names sub_f4[1] zeros[1] add_f1[1]
 10 1
 01 1
 
-.names f3[2] f2[2] cout_i[2]
+.names sub_f4[2] zeros[2] add_f1[2]
 10 1
 01 1
 
-.names f3[3] f2[3] cout_i[3]
+.names sub_f4[3] zeros[3] add_f1[3]
 10 1
 01 1
 
-.names f3[4] f2[4] cout_i[4]
+.names sub_f4[4] zeros[4] add_f1[4]
 10 1
 01 1
 
-.names f3[5] f2[5] cout_i[5]
+.names sub_f4[5] zeros[5] add_f1[5]
 10 1
 01 1
 
-.names f3[6] f2[6] cout_i[6]
+.names sub_f4[6] zeros[6] add_f1[6]
 10 1
 01 1
 
-.names f3[7] f2[7] cout_i[7]
+.names sub_f4[7] zeros[7] add_f1[7]
 10 1
 01 1
 
-.names f3[8] f2[8] cout_i[8]
+.names sub_f4[8] zeros[8] add_f1[8]
 10 1
 01 1
 
-.names f3[9] f2[9] cout_i[9]
+.names sub_f4[9] zeros[9] add_f1[9]
 10 1
 01 1
 
-.names f4[0] ONE[0] f1[0]
-10 1
-01 1
-
-.names f4[10] ONE[10] f1[10]
-10 1
-01 1
-
-.names f4[1] ONE[1] f1[1]
-10 1
-01 1
-
-.names f4[2] ONE[2] f1[2]
-10 1
-01 1
-
-.names f4[3] ONE[3] f1[3]
-10 1
-01 1
-
-.names f4[4] ONE[4] f1[4]
-10 1
-01 1
-
-.names f4[5] ONE[5] f1[5]
-10 1
-01 1
-
-.names f4[6] ONE[6] f1[6]
-10 1
-01 1
-
-.names f4[7] ONE[7] f1[7]
-10 1
-01 1
-
-.names f4[8] ONE[8] f1[8]
-10 1
-01 1
-
-.names f4[9] ONE[9] f1[9]
-10 1
-01 1
-
-.names f4[0] ONE[0] f2[0]
+.names sub_f4[0] zeros[0] add_f2[0]
 11 1
 
-.names f4[10] ONE[10] f2[10]
+.names sub_f4[10] zeros[10] add_f2[10]
 11 1
 
-.names f4[1] ONE[1] f2[1]
+.names sub_f4[1] zeros[1] add_f2[1]
 11 1
 
-.names f4[2] ONE[2] f2[2]
+.names sub_f4[2] zeros[2] add_f2[2]
 11 1
 
-.names f4[3] ONE[3] f2[3]
+.names sub_f4[3] zeros[3] add_f2[3]
 11 1
 
-.names f4[4] ONE[4] f2[4]
+.names sub_f4[4] zeros[4] add_f2[4]
 11 1
 
-.names f4[5] ONE[5] f2[5]
+.names sub_f4[5] zeros[5] add_f2[5]
 11 1
 
-.names f4[6] ONE[6] f2[6]
+.names sub_f4[6] zeros[6] add_f2[6]
 11 1
 
-.names f4[7] ONE[7] f2[7]
+.names sub_f4[7] zeros[7] add_f2[7]
 11 1
 
-.names f4[8] ONE[8] f2[8]
+.names sub_f4[8] zeros[8] add_f2[8]
 11 1
 
-.names f4[9] ONE[9] f2[9]
+.names sub_f4[9] zeros[9] add_f2[9]
 11 1
 
-.names cout_i[10] f3
+.names add_f1[0] ONE add_f3[0]
+11 1
+
+.names add_f1[10] cout_i[9] add_f3[10]
+11 1
+
+.names add_f1[1] cout_i[0] add_f3[1]
+11 1
+
+.names add_f1[2] cout_i[1] add_f3[2]
+11 1
+
+.names add_f1[3] cout_i[2] add_f3[3]
+11 1
+
+.names add_f1[4] cout_i[3] add_f3[4]
+11 1
+
+.names add_f1[5] cout_i[4] add_f3[5]
+11 1
+
+.names add_f1[6] cout_i[5] add_f3[6]
+11 1
+
+.names add_f1[7] cout_i[6] add_f3[7]
+11 1
+
+.names add_f1[8] cout_i[7] add_f3[8]
+11 1
+
+.names add_f1[9] cout_i[8] add_f3[9]
+11 1
+
+.names add_f3[0] add_f2[0] cout_i[0]
+10 1
+01 1
+
+.names add_f3[10] add_f2[10] cout_i[10]
+10 1
+01 1
+
+.names add_f3[1] add_f2[1] cout_i[1]
+10 1
+01 1
+
+.names add_f3[2] add_f2[2] cout_i[2]
+10 1
+01 1
+
+.names add_f3[3] add_f2[3] cout_i[3]
+10 1
+01 1
+
+.names add_f3[4] add_f2[4] cout_i[4]
+10 1
+01 1
+
+.names add_f3[5] add_f2[5] cout_i[5]
+10 1
+01 1
+
+.names add_f3[6] add_f2[6] cout_i[6]
+10 1
+01 1
+
+.names add_f3[7] add_f2[7] cout_i[7]
+10 1
+01 1
+
+.names add_f3[8] add_f2[8] cout_i[8]
+10 1
+01 1
+
+.names add_f3[9] add_f2[9] cout_i[9]
+10 1
+01 1
+
+.names add_f1[0] ONE out[0]
+10 1
+01 1
+
+.names add_f1[10] cout_i[9] out[10]
+10 1
+01 1
+
+.names add_f1[1] cout_i[0] out[1]
+10 1
+01 1
+
+.names add_f1[2] cout_i[1] out[2]
+10 1
+01 1
+
+.names add_f1[3] cout_i[2] out[3]
+10 1
+01 1
+
+.names add_f1[4] cout_i[3] out[4]
+10 1
+01 1
+
+.names add_f1[5] cout_i[4] out[5]
+10 1
+01 1
+
+.names add_f1[6] cout_i[5] out[6]
+10 1
+01 1
+
+.names add_f1[7] cout_i[6] out[7]
+10 1
+01 1
+
+.names add_f1[8] cout_i[7] out[8]
+10 1
+01 1
+
+.names add_f1[9] cout_i[8] out[9]
+10 1
+01 1
+
+.names out[0] s[0]
 1 1
 
-.names f1[0] ZERO f3[0]
-11 1
+.names out[10] s[10]
+1 1
 
-.names f1[10] cout_i[9] f3[10]
-11 1
+.names out[1] s[1]
+1 1
 
-.names f1[1] cout_i[0] f3[1]
-11 1
+.names out[2] s[2]
+1 1
 
-.names f1[2] cout_i[1] f3[2]
-11 1
+.names out[3] s[3]
+1 1
 
-.names f1[3] cout_i[2] f3[3]
-11 1
+.names out[4] s[4]
+1 1
 
-.names f1[4] cout_i[3] f3[4]
-11 1
+.names out[5] s[5]
+1 1
 
-.names f1[5] cout_i[4] f3[5]
-11 1
+.names out[6] s[6]
+1 1
 
-.names f1[6] cout_i[5] f3[6]
-11 1
+.names out[7] s[7]
+1 1
 
-.names f1[7] cout_i[6] f3[7]
-11 1
+.names out[8] s[8]
+1 1
 
-.names f1[8] cout_i[7] f3[8]
-11 1
+.names out[9] s[9]
+1 1
 
-.names f1[9] cout_i[8] f3[9]
-11 1
-
-.names f2[0] f4[0]
+.names b[0] sub_f1[0]
 0 1
 
-.names f2[10] f4[10]
+.names b[10] sub_f1[10]
 0 1
 
-.names f2[1] f4[1]
+.names b[1] sub_f1[1]
 0 1
 
-.names f2[2] f4[2]
+.names b[2] sub_f1[2]
 0 1
 
-.names f2[3] f4[3]
+.names b[3] sub_f1[3]
 0 1
 
-.names f2[4] f4[4]
+.names b[4] sub_f1[4]
 0 1
 
-.names f2[5] f4[5]
+.names b[5] sub_f1[5]
 0 1
 
-.names f2[6] f4[6]
+.names b[6] sub_f1[6]
 0 1
 
-.names f2[7] f4[7]
+.names b[7] sub_f1[7]
 0 1
 
-.names f2[8] f4[8]
+.names b[8] sub_f1[8]
 0 1
 
-.names f2[9] f4[9]
+.names b[9] sub_f1[9]
 0 1
 
-.names f1[0] ZERO s[0]
+.names add_f1[0] ONE sub_f2[0]
 10 1
 01 1
 
-.names f1[10] cout_i[9] s[10]
+.names add_f1[10] cout_i[9] sub_f2[10]
 10 1
 01 1
 
-.names f1[1] cout_i[0] s[1]
+.names add_f1[1] cout_i[0] sub_f2[1]
 10 1
 01 1
 
-.names f1[2] cout_i[1] s[2]
+.names add_f1[2] cout_i[1] sub_f2[2]
 10 1
 01 1
 
-.names f1[3] cout_i[2] s[3]
+.names add_f1[3] cout_i[2] sub_f2[3]
 10 1
 01 1
 
-.names f1[4] cout_i[3] s[4]
+.names add_f1[4] cout_i[3] sub_f2[4]
 10 1
 01 1
 
-.names f1[5] cout_i[4] s[5]
+.names add_f1[5] cout_i[4] sub_f2[5]
 10 1
 01 1
 
-.names f1[6] cout_i[5] s[6]
+.names add_f1[6] cout_i[5] sub_f2[6]
 10 1
 01 1
 
-.names f1[7] cout_i[6] s[7]
+.names add_f1[7] cout_i[6] sub_f2[7]
 10 1
 01 1
 
-.names f1[8] cout_i[7] s[8]
+.names add_f1[8] cout_i[7] sub_f2[8]
 10 1
 01 1
 
-.names f1[9] cout_i[8] s[9]
+.names add_f1[9] cout_i[8] sub_f2[9]
 10 1
 01 1
+
+.names cout_i[10] sub_f3
+1 1
+
+.names sub_f2[0] sub_f4[0]
+0 1
+
+.names sub_f2[10] sub_f4[10]
+0 1
+
+.names sub_f2[1] sub_f4[1]
+0 1
+
+.names sub_f2[2] sub_f4[2]
+0 1
+
+.names sub_f2[3] sub_f4[3]
+0 1
+
+.names sub_f2[4] sub_f4[4]
+0 1
+
+.names sub_f2[5] sub_f4[5]
+0 1
+
+.names sub_f2[6] sub_f4[6]
+0 1
+
+.names sub_f2[7] sub_f4[7]
+0 1
+
+.names sub_f2[8] sub_f4[8]
+0 1
+
+.names sub_f2[9] sub_f4[9]
+0 1
+
+.names cout_i[10] sub_f5
+1 1
+
+.names a[0] sub_f6[0]
+1 1
+
+.names a[10] sub_f6[10]
+1 1
+
+.names a[1] sub_f6[1]
+1 1
+
+.names a[2] sub_f6[2]
+1 1
+
+.names a[3] sub_f6[3]
+1 1
+
+.names a[4] sub_f6[4]
+1 1
+
+.names a[5] sub_f6[5]
+1 1
+
+.names a[6] sub_f6[6]
+1 1
+
+.names a[7] sub_f6[7]
+1 1
+
+.names a[8] sub_f6[8]
+1 1
+
+.names a[9] sub_f6[9]
+1 1
+
+.names subf6[0]
+
+.names subf6[10]
+
+.names subf6[1]
+
+.names subf6[2]
+
+.names subf6[3]
+
+.names subf6[4]
+
+.names subf6[5]
+
+.names subf6[6]
+
+.names subf6[7]
+
+.names subf6[8]
+
+.names subf6[9]
+
+.names zeros[0]
+
+.names zeros[10]
+
+.names zeros[1]
+
+.names zeros[2]
+
+.names zeros[3]
+
+.names zeros[4]
+
+.names zeros[5]
+
+.names zeros[6]
+
+.names zeros[7]
+
+.names zeros[8]
+
+.names zeros[9]
 
 .end

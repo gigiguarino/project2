@@ -60,11 +60,11 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
   {
       stringstream sstr;
       sstr << i;
-      name = "f1[" + sstr.str() + "]";
+      name = "add_f1[" + sstr.str() + "]";
       node = createNode(name);
-      name = "f2[" + sstr.str() + "]";
+      name = "add_f2[" + sstr.str() + "]";
       node = createNode(name);
-      name = "f3[" + sstr.str() + "]";
+      name = "add_f3[" + sstr.str() + "]";
       node = createNode(name);
   }
   
@@ -106,15 +106,15 @@ int Circuit::createADDModule(const string &input1, const string &input2, const s
       assert(c != NULL);
     }
 
-    name = "f1[" + sstr.str() + "]";
+    name = "add_f1[" + sstr.str() + "]";
     d = findNode(name);
     assert(d != NULL);
 
-    name = "f2[" + sstr.str() + "]";
+    name = "add_f2[" + sstr.str() + "]";
     e = findNode(name);
     assert(e != NULL);
     
-    name = "f3[" + sstr.str() + "]";
+    name = "add_f3[" + sstr.str() + "]";
     f = findNode(name);
     assert(f != NULL);
 
@@ -195,7 +195,7 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
   Node* zeroNode = createNode("ZERO");
   createZERONode(zeroNode);
   
-  // create inverse input2 nodes and call it input3
+  // create inverse input2 nodes
   for (unsigned int i = 0; i < numBits; ++i)
   {
     stringstream sstr;
@@ -205,32 +205,71 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
     node1 = findNode(name);
     assert(node1 != NULL);
     
-    name = "f1[" + sstr.str() + "]";
+    name = "sub_f1[" + sstr.str() + "]";
     node2 = createNode(name);
     
     createINVNode(node1,node2);
   }
+
+  for (unsigned int i = 0; i < numBits; ++i)
+  {
+    stringstream sstr;
+    sstr << i;
+    name = "sub_f6[" + sstr.str() + "]";
+    node1 = createNode(name);
+
+    name = input1 + "[" + sstr.str() + "]";
+    node2 = findNode(name);
+    assert(node2 != NULL);
+
+    createBUF1Node(node2, node1);
+  }
   
-  createADDModule("f1", input1, "ONE", "f2", "f3", numBits);
+  createADDModule("sub_f1", "subf6", "ONE", "sub_f2", "sub_f3", numBits);
   
   for (unsigned int i = 0; i < numBits; ++i)
   {
     stringstream sstr;
     sstr << i;
     
-    name = "f2[" + sstr.str() + "]";
+    name = "sub_f2[" + sstr.str() + "]";
     node1 = findNode(name);
     assert(node1 != NULL);
     
-    name = "f4[" + sstr.str() + "]";
+    name = "sub_f4[" + sstr.str() + "]";
     node2 = createNode(name);
     
     
     createINVNode(node1,node2);
   }
+
+  // create nodes of 0's to add
+  for (unsigned int i = 0; i < numBits; ++i)
+  {
+    stringstream sstr;
+    sstr << i;
+    name = "zeros[" + sstr.str() + "]";
+    node = createNode(name);
+    createZERONode(node);
+  }
   
-  createADDModule("f4", "ONE", "ZERO", output, "f3", numBits);
+  createADDModule("sub_f4", "zeros", "ONE", "out", "sub_f5", numBits);
   
+  for (unsigned int i = 0; i < numBits; ++i)
+  {
+    stringstream sstr;
+    sstr << i;
+    name = output + "[" + sstr.str() + "]";
+    node = findNode(name);
+    assert(node != NULL);
+
+    name = "out[" + sstr.str() + "]";
+    node1 = findNode(name);
+    assert(node != NULL);
+
+    createBUF1Node(node1, node);
+  }
+
   return 0;
 }
 

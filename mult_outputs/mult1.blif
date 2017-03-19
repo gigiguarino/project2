@@ -12,24 +12,24 @@
 
 .names add[0]
 
-.names f3[0] f2[0] cout_i[0]
+.names s[0] add[0] add_f1[0]
+10 1
+01 1
+
+.names s[0] add[0] add_f2[0]
+11 1
+
+.names add_f1[0] ZERO add_f3[0]
+11 1
+
+.names add_f3[0] add_f2[0] cout_i[0]
 10 1
 01 1
 
 .names cout_i[0] f1
 1 1
 
-.names s[0] add[0] f1[0]
-10 1
-01 1
-
-.names s[0] add[0] f2[0]
-11 1
-
-.names f1[0] ZERO f3[0]
-11 1
-
-.names f1[0] ZERO s[0]
+.names add_f1[0] ZERO s[0]
 10 1
 01 1
 

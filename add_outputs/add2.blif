@@ -4,42 +4,42 @@
 
 .outputs cout s[0] s[1] 
 
+.names a[0] b[0] add_f1[0]
+10 1
+01 1
+
+.names a[1] b[1] add_f1[1]
+10 1
+01 1
+
+.names a[0] b[0] add_f2[0]
+11 1
+
+.names a[1] b[1] add_f2[1]
+11 1
+
+.names add_f1[0] cin add_f3[0]
+11 1
+
+.names add_f1[1] cout_i[0] add_f3[1]
+11 1
+
 .names cout_i[1] cout
 1 1
 
-.names f3[0] f2[0] cout_i[0]
+.names add_f3[0] add_f2[0] cout_i[0]
 10 1
 01 1
 
-.names f3[1] f2[1] cout_i[1]
+.names add_f3[1] add_f2[1] cout_i[1]
 10 1
 01 1
 
-.names a[0] b[0] f1[0]
+.names add_f1[0] cin s[0]
 10 1
 01 1
 
-.names a[1] b[1] f1[1]
-10 1
-01 1
-
-.names a[0] b[0] f2[0]
-11 1
-
-.names a[1] b[1] f2[1]
-11 1
-
-.names f1[0] cin f3[0]
-11 1
-
-.names f1[1] cout_i[0] f3[1]
-11 1
-
-.names f1[0] cin s[0]
-10 1
-01 1
-
-.names f1[1] cout_i[0] s[1]
+.names add_f1[1] cout_i[0] s[1]
 10 1
 01 1
 

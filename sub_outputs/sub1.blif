@@ -7,32 +7,50 @@
 .names ONE
 1
 
-.names ONE[0]
-
 .names ZERO
 
-.names f3[0] f2[0] cout_i[0]
+.names sub_f4[0] zeros[0] add_f1[0]
 10 1
 01 1
 
-.names f4[0] ONE[0] f1[0]
-10 1
-01 1
-
-.names f4[0] ONE[0] f2[0]
+.names sub_f4[0] zeros[0] add_f2[0]
 11 1
 
-.names cout_i[0] f3
+.names add_f1[0] ONE add_f3[0]
+11 1
+
+.names add_f3[0] add_f2[0] cout_i[0]
+10 1
+01 1
+
+.names add_f1[0] ONE out[0]
+10 1
+01 1
+
+.names out[0] s[0]
 1 1
 
-.names f1[0] ZERO f3[0]
-11 1
-
-.names f2[0] f4[0]
+.names b[0] sub_f1[0]
 0 1
 
-.names f1[0] ZERO s[0]
+.names add_f1[0] ONE sub_f2[0]
 10 1
 01 1
+
+.names cout_i[0] sub_f3
+1 1
+
+.names sub_f2[0] sub_f4[0]
+0 1
+
+.names cout_i[0] sub_f5
+1 1
+
+.names a[0] sub_f6[0]
+1 1
+
+.names subf6[0]
+
+.names zeros[0]
 
 .end
