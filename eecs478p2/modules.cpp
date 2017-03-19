@@ -249,7 +249,7 @@ int Circuit::createSUBModule(const string &input1, const string &input2, const s
     createBUF1Node(node2, node1);
   }
   
-  createADDModule(output + "_sub_f1", output + "_subf6", output + "_ONE", "sub_f2", "sub_f3", numBits);
+  createADDModule(output + "_sub_f1", output + "_subf6", output + "_ONE", output + "_sub_f2", "sub_f3", numBits);
   
   for (unsigned int i = 0; i < numBits; ++i)
   {

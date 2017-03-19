@@ -28,136 +28,10 @@
 
 .names add[8]
 
-.names s[0] add[0] add_f1[0]
-10 1
-01 1
-
-.names s[1] add[1] add_f1[1]
-10 1
-01 1
-
-.names s[2] add[2] add_f1[2]
-10 1
-01 1
-
-.names s[3] add[3] add_f1[3]
-10 1
-01 1
-
-.names s[4] add[4] add_f1[4]
-10 1
-01 1
-
-.names s[5] add[5] add_f1[5]
-10 1
-01 1
-
-.names s[6] add[6] add_f1[6]
-10 1
-01 1
-
-.names s[7] add[7] add_f1[7]
-10 1
-01 1
-
-.names s[8] add[8] add_f1[8]
-10 1
-01 1
-
-.names s[0] add[0] add_f2[0]
-11 1
-
-.names s[1] add[1] add_f2[1]
-11 1
-
-.names s[2] add[2] add_f2[2]
-11 1
-
-.names s[3] add[3] add_f2[3]
-11 1
-
-.names s[4] add[4] add_f2[4]
-11 1
-
-.names s[5] add[5] add_f2[5]
-11 1
-
-.names s[6] add[6] add_f2[6]
-11 1
-
-.names s[7] add[7] add_f2[7]
-11 1
-
-.names s[8] add[8] add_f2[8]
-11 1
-
-.names add_f1[0] ZERO add_f3[0]
-11 1
-
-.names add_f1[1] cout_i[0] add_f3[1]
-11 1
-
-.names add_f1[2] cout_i[1] add_f3[2]
-11 1
-
-.names add_f1[3] cout_i[2] add_f3[3]
-11 1
-
-.names add_f1[4] cout_i[3] add_f3[4]
-11 1
-
-.names add_f1[5] cout_i[4] add_f3[5]
-11 1
-
-.names add_f1[6] cout_i[5] add_f3[6]
-11 1
-
-.names add_f1[7] cout_i[6] add_f3[7]
-11 1
-
-.names add_f1[8] cout_i[7] add_f3[8]
-11 1
-
-.names add_f3[0] add_f2[0] cout_i[0]
-10 1
-01 1
-
-.names add_f3[1] add_f2[1] cout_i[1]
-10 1
-01 1
-
-.names add_f3[2] add_f2[2] cout_i[2]
-10 1
-01 1
-
-.names add_f3[3] add_f2[3] cout_i[3]
-10 1
-01 1
-
-.names add_f3[4] add_f2[4] cout_i[4]
-10 1
-01 1
-
-.names add_f3[5] add_f2[5] cout_i[5]
-10 1
-01 1
-
-.names add_f3[6] add_f2[6] cout_i[6]
-10 1
-01 1
-
-.names add_f3[7] add_f2[7] cout_i[7]
-10 1
-01 1
-
-.names add_f3[8] add_f2[8] cout_i[8]
-10 1
-01 1
-
-.names cout_i[8] f1
+.names s_cout_i[8] f1
 1 1
 
-.names add_f1[0] ZERO s[0]
+.names s_add_f1[0] ZERO s[0]
 10 1
 01 1
 
@@ -177,39 +51,165 @@
 
 .names s[17]
 
-.names add_f1[1] cout_i[0] s[1]
+.names s_add_f1[1] s_cout_i[0] s[1]
 10 1
 01 1
 
-.names add_f1[2] cout_i[1] s[2]
+.names s_add_f1[2] s_cout_i[1] s[2]
 10 1
 01 1
 
-.names add_f1[3] cout_i[2] s[3]
+.names s_add_f1[3] s_cout_i[2] s[3]
 10 1
 01 1
 
-.names add_f1[4] cout_i[3] s[4]
+.names s_add_f1[4] s_cout_i[3] s[4]
 10 1
 01 1
 
-.names add_f1[5] cout_i[4] s[5]
+.names s_add_f1[5] s_cout_i[4] s[5]
 10 1
 01 1
 
-.names add_f1[6] cout_i[5] s[6]
+.names s_add_f1[6] s_cout_i[5] s[6]
 10 1
 01 1
 
-.names add_f1[7] cout_i[6] s[7]
+.names s_add_f1[7] s_cout_i[6] s[7]
 10 1
 01 1
 
-.names add_f1[8] cout_i[7] s[8]
+.names s_add_f1[8] s_cout_i[7] s[8]
 10 1
 01 1
 
 .names s[9]
+
+.names s[0] add[0] s_add_f1[0]
+10 1
+01 1
+
+.names s[1] add[1] s_add_f1[1]
+10 1
+01 1
+
+.names s[2] add[2] s_add_f1[2]
+10 1
+01 1
+
+.names s[3] add[3] s_add_f1[3]
+10 1
+01 1
+
+.names s[4] add[4] s_add_f1[4]
+10 1
+01 1
+
+.names s[5] add[5] s_add_f1[5]
+10 1
+01 1
+
+.names s[6] add[6] s_add_f1[6]
+10 1
+01 1
+
+.names s[7] add[7] s_add_f1[7]
+10 1
+01 1
+
+.names s[8] add[8] s_add_f1[8]
+10 1
+01 1
+
+.names s[0] add[0] s_add_f2[0]
+11 1
+
+.names s[1] add[1] s_add_f2[1]
+11 1
+
+.names s[2] add[2] s_add_f2[2]
+11 1
+
+.names s[3] add[3] s_add_f2[3]
+11 1
+
+.names s[4] add[4] s_add_f2[4]
+11 1
+
+.names s[5] add[5] s_add_f2[5]
+11 1
+
+.names s[6] add[6] s_add_f2[6]
+11 1
+
+.names s[7] add[7] s_add_f2[7]
+11 1
+
+.names s[8] add[8] s_add_f2[8]
+11 1
+
+.names s_add_f1[0] ZERO s_add_f3[0]
+11 1
+
+.names s_add_f1[1] s_cout_i[0] s_add_f3[1]
+11 1
+
+.names s_add_f1[2] s_cout_i[1] s_add_f3[2]
+11 1
+
+.names s_add_f1[3] s_cout_i[2] s_add_f3[3]
+11 1
+
+.names s_add_f1[4] s_cout_i[3] s_add_f3[4]
+11 1
+
+.names s_add_f1[5] s_cout_i[4] s_add_f3[5]
+11 1
+
+.names s_add_f1[6] s_cout_i[5] s_add_f3[6]
+11 1
+
+.names s_add_f1[7] s_cout_i[6] s_add_f3[7]
+11 1
+
+.names s_add_f1[8] s_cout_i[7] s_add_f3[8]
+11 1
+
+.names s_add_f3[0] s_add_f2[0] s_cout_i[0]
+10 1
+01 1
+
+.names s_add_f3[1] s_add_f2[1] s_cout_i[1]
+10 1
+01 1
+
+.names s_add_f3[2] s_add_f2[2] s_cout_i[2]
+10 1
+01 1
+
+.names s_add_f3[3] s_add_f2[3] s_cout_i[3]
+10 1
+01 1
+
+.names s_add_f3[4] s_add_f2[4] s_cout_i[4]
+10 1
+01 1
+
+.names s_add_f3[5] s_add_f2[5] s_cout_i[5]
+10 1
+01 1
+
+.names s_add_f3[6] s_add_f2[6] s_cout_i[6]
+10 1
+01 1
+
+.names s_add_f3[7] s_add_f2[7] s_cout_i[7]
+10 1
+01 1
+
+.names s_add_f3[8] s_add_f2[8] s_cout_i[8]
+10 1
+01 1
 
 .names shifted
 
