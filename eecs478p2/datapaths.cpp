@@ -88,8 +88,39 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
     }
   }
   
-  createMULTModule(input1, "nine", "f9x", 16);
-  createMULTModule(input2, "twelve", "f12y", 20);
+  // create absolute values of inputs
+  for (unsigned int i = 0; i < 16; ++i)
+  {
+    stringstream sstr;
+    sstr << i;
+    
+    name = input1 + "[" + sstr.str() + "]";
+    node1 = findNode(name);
+    assert(node1 != NULL);
+    
+    name = input1 + "_abs[" + sstr.str() + "]";
+    node2 = createNode(name);
+  }
+  
+  createABSModule(input1, input1 + "_abs", 16);
+  
+  for (unsigned int i = 0; i < 20; ++i)
+  {
+    stringstream sstr;
+    sstr << i;
+    
+    name = input2 + "[" + sstr.str() + "]";
+    node1 = findNode(name);
+    assert(node1 != NULL);
+    
+    name = input2 + "_abs[" + sstr.str() + "]";
+    node2 = createNode(name);
+  }
+  
+  createABSModule(input2, input2 + "_abs", 20);
+  
+  createMULTModule(input1 + "_abs", "nine", "f9x", 16);
+  createMULTModule(input2 + "_abs", "twelve", "f12y", 20);
   
   for (unsigned int i = 16; i < 20; ++i)
   {
@@ -127,13 +158,12 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
     node2 = findNode(name);
     assert(node != NULL);
     
-    name = "f[" + sstr.str() + "]";
-    node3 = createNode(name);
+    name = output + "[" + sstr.str() + "]";
+    node3 = findNode(name);
+    assert(node3 != NULL);
     
     createMUX2Node(node, node2, node1, node3);
   }
-  
-  createABSModule("f", output, 20);
   
   return 0;
 }

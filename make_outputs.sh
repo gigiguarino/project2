@@ -21,7 +21,6 @@ echo >> ../add_outputs/add$i.blif
 ./project2 -add $i ../add_outputs/add$i.blif
 done
 
-
 for i in {1..32}
 do
 echo >> ../sub_outputs/sub$i.blif

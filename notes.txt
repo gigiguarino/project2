@@ -16,3 +16,127 @@ abs calls:
 mult calls:
 - add numBits times
 
+to test datapath:
+- create some test cases
+- calculate the actual outcome
+- use blif simulator to simulate datapath blif for each input combo
+- compare outcomes
+
+to test mult:
+- create random test cases for 1-32 bit numbers
+- calculate actual outcome
+- use blif simulator to simulate multiplication of binary numbers
+- compare outcomes
+
+
+
+
+test cases for datapath:
+range: -32768 to 32767
+
+1:
+x=32767 y=-32768
+outcome=294903
+
+2:
+x=32767 y=32767
+outcome=294903
+
+3:
+x=-32768 y=-32768
+outcome=294912
+
+4:
+x=-32768 y=32767
+outcome=294912
+
+5:
+x=12 y=9
+outcome=108
+
+6:
+x=12 y=-9
+outcome=108
+
+7:
+x=-12 y=9
+outcome=108
+
+8:
+x=-12 y=-9
+outcome=108
+
+9:
+x=9 y=12
+outcome=81
+
+10:
+x=9 y=-12
+outcome=81
+
+11:
+x=-9 y=12
+outcome=81
+
+12:
+x=-9 y=-12
+outcome=81
+
+13:
+x=100 y=1
+outcome=12
+
+14:
+x=-21846 y=-21846
+outcome=196614
+
+15:
+x=-21846 y=21845
+outcome=196614
+
+16:
+x=21845 y=-21846
+outcome=196605
+
+17:
+x=21845 y=21845
+outcome=196605
+
+
+
+test cases for mult:
+
+2bit:
+a=11 b=11
+out=9
+out=1001
+
+3bit:
+a=111 b=111
+out=49
+out=110001
+
+4bit:
+a=1111 b=1111
+out=225
+out=11100001
+
+5bit:
+a=11111 b=11111
+out=961
+out=1111000001
+
+12bit:
+a=11111111111 b=111111111111
+out=16769025
+out=1111111111110000000000001
+
+16bit:
+a=1111111111111111 b=1111111111111111
+out=4294836225
+out=11111111111111100000000000000001
+
+
+
+
+
