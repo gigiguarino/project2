@@ -8,6 +8,8 @@
 // test 2 and 4 not passing
 // test 9 and 11 not passing
 // select bits 000, 110
+// 000 -- x is pos, y is pos, 9x < 12y
+// 110 -- x is neg, y is pos, 9x < 12y
 
 int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2, const string &output)
 {
@@ -141,18 +143,22 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
     
     if (i < 16)
     {
+      // create new abs nodes for input1
       name = input1 + "_abs[" + sstr.str() + "]";
       node2 = createNode(name);
     }
 
     else
     {
+      // two's complement carries over
       node1 = first_bit_x;
       
+      // create new abs nodes for input1
       name = input1 + "_abs[" + sstr.str() + "]";
       node2 = createNode(name);
       createBUF1Node(node1, node2);
-        
+      
+      // fill in the rest of input1 so it's 20 bits   
       name = input1 + "[" + sstr.str() + "]";
       node2 = createNode(name);
       createBUF1Node(node1, node2);
@@ -168,18 +174,22 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
     
     if (i < 16)
     {
-      name = input2 + "_abs[" + sstr.str() + "]";
+      // create new abs nodes for input2
+	    name = input2 + "_abs[" + sstr.str() + "]";
       node2 = createNode(name);
     }
   
     else
     {
+      // two's complement carries over
       node1 = first_bit_y;
-      
+   
+      // new abs nodes for input2   
       name = input2 + "_abs[" + sstr.str() + "]";
       node2 = createNode(name);
       createBUF1Node(node1, node2);
       
+      // new input2 nodes to fill 20 bits
       name = input2 + "[" + sstr.str() + "]";
       node2 = createNode(name);
       createBUF1Node(node1, node2);
@@ -188,7 +198,9 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
   
   createABSModule(input2, input2 + "_abs", 20);
   
+  // 9x
   createMULTModule(input1 + "_abs", "nine", "f9x", 20);
+  //12y
   createMULTModule(input2 + "_abs", "twelve", "f12y", 20);
   createSUBModule("f12y", "f9x", "diff", 20);
   
