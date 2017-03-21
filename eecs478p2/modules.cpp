@@ -430,7 +430,7 @@ int Circuit::createMULTModule(const string &input1, const string &input2, const 
     
     // fill remaining parts of shifted nodes
     // with zeros
-    for (unsigned int j = numBits; j < numBits*2; ++j)
+    for (unsigned int j = numBits+i; j < numBits*2; ++j)
     {
       stringstream sstr2;
       sstr2 << j;

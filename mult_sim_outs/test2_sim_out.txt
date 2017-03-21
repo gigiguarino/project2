@@ -1,0 +1,17 @@
+file ../mult_outputs/mult3.blif successfully read.
+
+Inputs Names (in order of input): 
+a[2]...a[0] 
+b[2]...b[0] 
+
+Output Names (in order of output): 
+s[5]...s[0] 
+
+************************************************************
+
+input  a[2]...a[0]: 111
+input  b[2]...b[0]: 111
+
+output s[5]...s[0]: 010001
+
+************************************************************

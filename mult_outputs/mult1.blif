@@ -1,0 +1,72 @@
+.model multiplier
+
+.inputs a[0] b[0] 
+
+.outputs s[0] s[1] 
+
+.names ZERO
+
+.names s_out_sum0_h[1] dc0
+1 1
+
+.names b[0] a[0] pp0[0]
+11 1
+
+.names pp0[0] pps0[0]
+1 1
+
+.names pps0[1]
+
+.names s_out_sum0[0] s[0]
+1 1
+
+.names s_out_sum0[1] s[1]
+1 1
+
+.names s_in_sum0[0]
+
+.names s_in_sum0[1]
+
+.names s_out_sum0[0] s_in_sum1[0]
+1 1
+
+.names s_out_sum0[1] s_in_sum1[1]
+1 1
+
+.names s_out_sum0_d[0] ZERO s_out_sum0[0]
+10 1
+01 1
+
+.names s_out_sum0_d[1] s_out_sum0_h[0] s_out_sum0[1]
+10 1
+01 1
+
+.names pps0[0] s_in_sum0[0] s_out_sum0_d[0]
+10 1
+01 1
+
+.names pps0[1] s_in_sum0[1] s_out_sum0_d[1]
+10 1
+01 1
+
+.names pps0[0] s_in_sum0[0] s_out_sum0_e[0]
+11 1
+
+.names pps0[1] s_in_sum0[1] s_out_sum0_e[1]
+11 1
+
+.names s_out_sum0_d[0] ZERO s_out_sum0_f[0]
+11 1
+
+.names s_out_sum0_d[1] s_out_sum0_h[0] s_out_sum0_f[1]
+11 1
+
+.names s_out_sum0_f[0] s_out_sum0_e[0] s_out_sum0_h[0]
+-1 1
+1- 1
+
+.names s_out_sum0_f[1] s_out_sum0_e[1] s_out_sum0_h[1]
+-1 1
+1- 1
+
+.end

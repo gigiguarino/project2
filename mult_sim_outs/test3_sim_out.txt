@@ -1,0 +1,6 @@
+file ../mult_outputs/mult4.blif successfully read.
+
+Inputs Names (in order of input): 
+a[3]...a[0] 
+b[3]...b[0] 
+Expecting 4 inputs but received 3 inputs instead.

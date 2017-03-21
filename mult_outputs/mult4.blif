@@ -1,0 +1,867 @@
+.model multiplier
+
+.inputs a[0] a[1] a[2] a[3] b[0] b[1] b[2] b[3] 
+
+.outputs s[0] s[1] s[2] s[3] s[4] s[5] s[6] s[7] 
+
+.names ZERO
+
+.names s_out_sum0_h[7] dc0
+1 1
+
+.names s_out_sum1_h[7] dc1
+1 1
+
+.names s_out_sum2_h[7] dc2
+1 1
+
+.names s_out_sum3_h[7] dc3
+1 1
+
+.names b[0] a[0] pp0[0]
+11 1
+
+.names b[0] a[1] pp0[1]
+11 1
+
+.names b[0] a[2] pp0[2]
+11 1
+
+.names b[0] a[3] pp0[3]
+11 1
+
+.names b[1] a[0] pp1[0]
+11 1
+
+.names b[1] a[1] pp1[1]
+11 1
+
+.names b[1] a[2] pp1[2]
+11 1
+
+.names b[1] a[3] pp1[3]
+11 1
+
+.names b[2] a[0] pp2[0]
+11 1
+
+.names b[2] a[1] pp2[1]
+11 1
+
+.names b[2] a[2] pp2[2]
+11 1
+
+.names b[2] a[3] pp2[3]
+11 1
+
+.names b[3] a[0] pp3[0]
+11 1
+
+.names b[3] a[1] pp3[1]
+11 1
+
+.names b[3] a[2] pp3[2]
+11 1
+
+.names b[3] a[3] pp3[3]
+11 1
+
+.names pp0[0] pps0[0]
+1 1
+
+.names pp0[1] pps0[1]
+1 1
+
+.names pp0[2] pps0[2]
+1 1
+
+.names pp0[3] pps0[3]
+1 1
+
+.names pps0[4]
+
+.names pps0[5]
+
+.names pps0[6]
+
+.names pps0[7]
+
+.names ZERO pps1[0]
+1 1
+
+.names pp1[0] pps1[1]
+1 1
+
+.names pp1[1] pps1[2]
+1 1
+
+.names pp1[2] pps1[3]
+1 1
+
+.names pp1[3] pps1[4]
+1 1
+
+.names pps1[5]
+
+.names pps1[6]
+
+.names pps1[7]
+
+.names ZERO pps2[0]
+1 1
+
+.names ZERO pps2[1]
+1 1
+
+.names pp2[0] pps2[2]
+1 1
+
+.names pp2[1] pps2[3]
+1 1
+
+.names pp2[2] pps2[4]
+1 1
+
+.names pp2[3] pps2[5]
+1 1
+
+.names pps2[6]
+
+.names pps2[7]
+
+.names ZERO pps3[0]
+1 1
+
+.names ZERO pps3[1]
+1 1
+
+.names ZERO pps3[2]
+1 1
+
+.names pp3[0] pps3[3]
+1 1
+
+.names pp3[1] pps3[4]
+1 1
+
+.names pp3[2] pps3[5]
+1 1
+
+.names pp3[3] pps3[6]
+1 1
+
+.names pps3[7]
+
+.names s_out_sum3[0] s[0]
+1 1
+
+.names s_out_sum3[1] s[1]
+1 1
+
+.names s_out_sum3[2] s[2]
+1 1
+
+.names s_out_sum3[3] s[3]
+1 1
+
+.names s_out_sum3[4] s[4]
+1 1
+
+.names s_out_sum3[5] s[5]
+1 1
+
+.names s_out_sum3[6] s[6]
+1 1
+
+.names s_out_sum3[7] s[7]
+1 1
+
+.names s_in_sum0[0]
+
+.names s_in_sum0[1]
+
+.names s_in_sum0[2]
+
+.names s_in_sum0[3]
+
+.names s_in_sum0[4]
+
+.names s_in_sum0[5]
+
+.names s_in_sum0[6]
+
+.names s_in_sum0[7]
+
+.names s_out_sum0[0] s_in_sum1[0]
+1 1
+
+.names s_out_sum0[1] s_in_sum1[1]
+1 1
+
+.names s_out_sum0[2] s_in_sum1[2]
+1 1
+
+.names s_out_sum0[3] s_in_sum1[3]
+1 1
+
+.names s_out_sum0[4] s_in_sum1[4]
+1 1
+
+.names s_out_sum0[5] s_in_sum1[5]
+1 1
+
+.names s_out_sum0[6] s_in_sum1[6]
+1 1
+
+.names s_out_sum0[7] s_in_sum1[7]
+1 1
+
+.names s_out_sum1[0] s_in_sum2[0]
+1 1
+
+.names s_out_sum1[1] s_in_sum2[1]
+1 1
+
+.names s_out_sum1[2] s_in_sum2[2]
+1 1
+
+.names s_out_sum1[3] s_in_sum2[3]
+1 1
+
+.names s_out_sum1[4] s_in_sum2[4]
+1 1
+
+.names s_out_sum1[5] s_in_sum2[5]
+1 1
+
+.names s_out_sum1[6] s_in_sum2[6]
+1 1
+
+.names s_out_sum1[7] s_in_sum2[7]
+1 1
+
+.names s_out_sum2[0] s_in_sum3[0]
+1 1
+
+.names s_out_sum2[1] s_in_sum3[1]
+1 1
+
+.names s_out_sum2[2] s_in_sum3[2]
+1 1
+
+.names s_out_sum2[3] s_in_sum3[3]
+1 1
+
+.names s_out_sum2[4] s_in_sum3[4]
+1 1
+
+.names s_out_sum2[5] s_in_sum3[5]
+1 1
+
+.names s_out_sum2[6] s_in_sum3[6]
+1 1
+
+.names s_out_sum2[7] s_in_sum3[7]
+1 1
+
+.names s_out_sum3[0] s_in_sum4[0]
+1 1
+
+.names s_out_sum3[1] s_in_sum4[1]
+1 1
+
+.names s_out_sum3[2] s_in_sum4[2]
+1 1
+
+.names s_out_sum3[3] s_in_sum4[3]
+1 1
+
+.names s_out_sum3[4] s_in_sum4[4]
+1 1
+
+.names s_out_sum3[5] s_in_sum4[5]
+1 1
+
+.names s_out_sum3[6] s_in_sum4[6]
+1 1
+
+.names s_out_sum3[7] s_in_sum4[7]
+1 1
+
+.names s_out_sum0_d[0] ZERO s_out_sum0[0]
+10 1
+01 1
+
+.names s_out_sum0_d[1] s_out_sum0_h[0] s_out_sum0[1]
+10 1
+01 1
+
+.names s_out_sum0_d[2] s_out_sum0_h[1] s_out_sum0[2]
+10 1
+01 1
+
+.names s_out_sum0_d[3] s_out_sum0_h[2] s_out_sum0[3]
+10 1
+01 1
+
+.names s_out_sum0_d[4] s_out_sum0_h[3] s_out_sum0[4]
+10 1
+01 1
+
+.names s_out_sum0_d[5] s_out_sum0_h[4] s_out_sum0[5]
+10 1
+01 1
+
+.names s_out_sum0_d[6] s_out_sum0_h[5] s_out_sum0[6]
+10 1
+01 1
+
+.names s_out_sum0_d[7] s_out_sum0_h[6] s_out_sum0[7]
+10 1
+01 1
+
+.names pps0[0] s_in_sum0[0] s_out_sum0_d[0]
+10 1
+01 1
+
+.names pps0[1] s_in_sum0[1] s_out_sum0_d[1]
+10 1
+01 1
+
+.names pps0[2] s_in_sum0[2] s_out_sum0_d[2]
+10 1
+01 1
+
+.names pps0[3] s_in_sum0[3] s_out_sum0_d[3]
+10 1
+01 1
+
+.names pps0[4] s_in_sum0[4] s_out_sum0_d[4]
+10 1
+01 1
+
+.names pps0[5] s_in_sum0[5] s_out_sum0_d[5]
+10 1
+01 1
+
+.names pps0[6] s_in_sum0[6] s_out_sum0_d[6]
+10 1
+01 1
+
+.names pps0[7] s_in_sum0[7] s_out_sum0_d[7]
+10 1
+01 1
+
+.names pps0[0] s_in_sum0[0] s_out_sum0_e[0]
+11 1
+
+.names pps0[1] s_in_sum0[1] s_out_sum0_e[1]
+11 1
+
+.names pps0[2] s_in_sum0[2] s_out_sum0_e[2]
+11 1
+
+.names pps0[3] s_in_sum0[3] s_out_sum0_e[3]
+11 1
+
+.names pps0[4] s_in_sum0[4] s_out_sum0_e[4]
+11 1
+
+.names pps0[5] s_in_sum0[5] s_out_sum0_e[5]
+11 1
+
+.names pps0[6] s_in_sum0[6] s_out_sum0_e[6]
+11 1
+
+.names pps0[7] s_in_sum0[7] s_out_sum0_e[7]
+11 1
+
+.names s_out_sum0_d[0] ZERO s_out_sum0_f[0]
+11 1
+
+.names s_out_sum0_d[1] s_out_sum0_h[0] s_out_sum0_f[1]
+11 1
+
+.names s_out_sum0_d[2] s_out_sum0_h[1] s_out_sum0_f[2]
+11 1
+
+.names s_out_sum0_d[3] s_out_sum0_h[2] s_out_sum0_f[3]
+11 1
+
+.names s_out_sum0_d[4] s_out_sum0_h[3] s_out_sum0_f[4]
+11 1
+
+.names s_out_sum0_d[5] s_out_sum0_h[4] s_out_sum0_f[5]
+11 1
+
+.names s_out_sum0_d[6] s_out_sum0_h[5] s_out_sum0_f[6]
+11 1
+
+.names s_out_sum0_d[7] s_out_sum0_h[6] s_out_sum0_f[7]
+11 1
+
+.names s_out_sum0_f[0] s_out_sum0_e[0] s_out_sum0_h[0]
+-1 1
+1- 1
+
+.names s_out_sum0_f[1] s_out_sum0_e[1] s_out_sum0_h[1]
+-1 1
+1- 1
+
+.names s_out_sum0_f[2] s_out_sum0_e[2] s_out_sum0_h[2]
+-1 1
+1- 1
+
+.names s_out_sum0_f[3] s_out_sum0_e[3] s_out_sum0_h[3]
+-1 1
+1- 1
+
+.names s_out_sum0_f[4] s_out_sum0_e[4] s_out_sum0_h[4]
+-1 1
+1- 1
+
+.names s_out_sum0_f[5] s_out_sum0_e[5] s_out_sum0_h[5]
+-1 1
+1- 1
+
+.names s_out_sum0_f[6] s_out_sum0_e[6] s_out_sum0_h[6]
+-1 1
+1- 1
+
+.names s_out_sum0_f[7] s_out_sum0_e[7] s_out_sum0_h[7]
+-1 1
+1- 1
+
+.names s_out_sum1_d[0] ZERO s_out_sum1[0]
+10 1
+01 1
+
+.names s_out_sum1_d[1] s_out_sum1_h[0] s_out_sum1[1]
+10 1
+01 1
+
+.names s_out_sum1_d[2] s_out_sum1_h[1] s_out_sum1[2]
+10 1
+01 1
+
+.names s_out_sum1_d[3] s_out_sum1_h[2] s_out_sum1[3]
+10 1
+01 1
+
+.names s_out_sum1_d[4] s_out_sum1_h[3] s_out_sum1[4]
+10 1
+01 1
+
+.names s_out_sum1_d[5] s_out_sum1_h[4] s_out_sum1[5]
+10 1
+01 1
+
+.names s_out_sum1_d[6] s_out_sum1_h[5] s_out_sum1[6]
+10 1
+01 1
+
+.names s_out_sum1_d[7] s_out_sum1_h[6] s_out_sum1[7]
+10 1
+01 1
+
+.names pps1[0] s_in_sum1[0] s_out_sum1_d[0]
+10 1
+01 1
+
+.names pps1[1] s_in_sum1[1] s_out_sum1_d[1]
+10 1
+01 1
+
+.names pps1[2] s_in_sum1[2] s_out_sum1_d[2]
+10 1
+01 1
+
+.names pps1[3] s_in_sum1[3] s_out_sum1_d[3]
+10 1
+01 1
+
+.names pps1[4] s_in_sum1[4] s_out_sum1_d[4]
+10 1
+01 1
+
+.names pps1[5] s_in_sum1[5] s_out_sum1_d[5]
+10 1
+01 1
+
+.names pps1[6] s_in_sum1[6] s_out_sum1_d[6]
+10 1
+01 1
+
+.names pps1[7] s_in_sum1[7] s_out_sum1_d[7]
+10 1
+01 1
+
+.names pps1[0] s_in_sum1[0] s_out_sum1_e[0]
+11 1
+
+.names pps1[1] s_in_sum1[1] s_out_sum1_e[1]
+11 1
+
+.names pps1[2] s_in_sum1[2] s_out_sum1_e[2]
+11 1
+
+.names pps1[3] s_in_sum1[3] s_out_sum1_e[3]
+11 1
+
+.names pps1[4] s_in_sum1[4] s_out_sum1_e[4]
+11 1
+
+.names pps1[5] s_in_sum1[5] s_out_sum1_e[5]
+11 1
+
+.names pps1[6] s_in_sum1[6] s_out_sum1_e[6]
+11 1
+
+.names pps1[7] s_in_sum1[7] s_out_sum1_e[7]
+11 1
+
+.names s_out_sum1_d[0] ZERO s_out_sum1_f[0]
+11 1
+
+.names s_out_sum1_d[1] s_out_sum1_h[0] s_out_sum1_f[1]
+11 1
+
+.names s_out_sum1_d[2] s_out_sum1_h[1] s_out_sum1_f[2]
+11 1
+
+.names s_out_sum1_d[3] s_out_sum1_h[2] s_out_sum1_f[3]
+11 1
+
+.names s_out_sum1_d[4] s_out_sum1_h[3] s_out_sum1_f[4]
+11 1
+
+.names s_out_sum1_d[5] s_out_sum1_h[4] s_out_sum1_f[5]
+11 1
+
+.names s_out_sum1_d[6] s_out_sum1_h[5] s_out_sum1_f[6]
+11 1
+
+.names s_out_sum1_d[7] s_out_sum1_h[6] s_out_sum1_f[7]
+11 1
+
+.names s_out_sum1_f[0] s_out_sum1_e[0] s_out_sum1_h[0]
+-1 1
+1- 1
+
+.names s_out_sum1_f[1] s_out_sum1_e[1] s_out_sum1_h[1]
+-1 1
+1- 1
+
+.names s_out_sum1_f[2] s_out_sum1_e[2] s_out_sum1_h[2]
+-1 1
+1- 1
+
+.names s_out_sum1_f[3] s_out_sum1_e[3] s_out_sum1_h[3]
+-1 1
+1- 1
+
+.names s_out_sum1_f[4] s_out_sum1_e[4] s_out_sum1_h[4]
+-1 1
+1- 1
+
+.names s_out_sum1_f[5] s_out_sum1_e[5] s_out_sum1_h[5]
+-1 1
+1- 1
+
+.names s_out_sum1_f[6] s_out_sum1_e[6] s_out_sum1_h[6]
+-1 1
+1- 1
+
+.names s_out_sum1_f[7] s_out_sum1_e[7] s_out_sum1_h[7]
+-1 1
+1- 1
+
+.names s_out_sum2_d[0] ZERO s_out_sum2[0]
+10 1
+01 1
+
+.names s_out_sum2_d[1] s_out_sum2_h[0] s_out_sum2[1]
+10 1
+01 1
+
+.names s_out_sum2_d[2] s_out_sum2_h[1] s_out_sum2[2]
+10 1
+01 1
+
+.names s_out_sum2_d[3] s_out_sum2_h[2] s_out_sum2[3]
+10 1
+01 1
+
+.names s_out_sum2_d[4] s_out_sum2_h[3] s_out_sum2[4]
+10 1
+01 1
+
+.names s_out_sum2_d[5] s_out_sum2_h[4] s_out_sum2[5]
+10 1
+01 1
+
+.names s_out_sum2_d[6] s_out_sum2_h[5] s_out_sum2[6]
+10 1
+01 1
+
+.names s_out_sum2_d[7] s_out_sum2_h[6] s_out_sum2[7]
+10 1
+01 1
+
+.names pps2[0] s_in_sum2[0] s_out_sum2_d[0]
+10 1
+01 1
+
+.names pps2[1] s_in_sum2[1] s_out_sum2_d[1]
+10 1
+01 1
+
+.names pps2[2] s_in_sum2[2] s_out_sum2_d[2]
+10 1
+01 1
+
+.names pps2[3] s_in_sum2[3] s_out_sum2_d[3]
+10 1
+01 1
+
+.names pps2[4] s_in_sum2[4] s_out_sum2_d[4]
+10 1
+01 1
+
+.names pps2[5] s_in_sum2[5] s_out_sum2_d[5]
+10 1
+01 1
+
+.names pps2[6] s_in_sum2[6] s_out_sum2_d[6]
+10 1
+01 1
+
+.names pps2[7] s_in_sum2[7] s_out_sum2_d[7]
+10 1
+01 1
+
+.names pps2[0] s_in_sum2[0] s_out_sum2_e[0]
+11 1
+
+.names pps2[1] s_in_sum2[1] s_out_sum2_e[1]
+11 1
+
+.names pps2[2] s_in_sum2[2] s_out_sum2_e[2]
+11 1
+
+.names pps2[3] s_in_sum2[3] s_out_sum2_e[3]
+11 1
+
+.names pps2[4] s_in_sum2[4] s_out_sum2_e[4]
+11 1
+
+.names pps2[5] s_in_sum2[5] s_out_sum2_e[5]
+11 1
+
+.names pps2[6] s_in_sum2[6] s_out_sum2_e[6]
+11 1
+
+.names pps2[7] s_in_sum2[7] s_out_sum2_e[7]
+11 1
+
+.names s_out_sum2_d[0] ZERO s_out_sum2_f[0]
+11 1
+
+.names s_out_sum2_d[1] s_out_sum2_h[0] s_out_sum2_f[1]
+11 1
+
+.names s_out_sum2_d[2] s_out_sum2_h[1] s_out_sum2_f[2]
+11 1
+
+.names s_out_sum2_d[3] s_out_sum2_h[2] s_out_sum2_f[3]
+11 1
+
+.names s_out_sum2_d[4] s_out_sum2_h[3] s_out_sum2_f[4]
+11 1
+
+.names s_out_sum2_d[5] s_out_sum2_h[4] s_out_sum2_f[5]
+11 1
+
+.names s_out_sum2_d[6] s_out_sum2_h[5] s_out_sum2_f[6]
+11 1
+
+.names s_out_sum2_d[7] s_out_sum2_h[6] s_out_sum2_f[7]
+11 1
+
+.names s_out_sum2_f[0] s_out_sum2_e[0] s_out_sum2_h[0]
+-1 1
+1- 1
+
+.names s_out_sum2_f[1] s_out_sum2_e[1] s_out_sum2_h[1]
+-1 1
+1- 1
+
+.names s_out_sum2_f[2] s_out_sum2_e[2] s_out_sum2_h[2]
+-1 1
+1- 1
+
+.names s_out_sum2_f[3] s_out_sum2_e[3] s_out_sum2_h[3]
+-1 1
+1- 1
+
+.names s_out_sum2_f[4] s_out_sum2_e[4] s_out_sum2_h[4]
+-1 1
+1- 1
+
+.names s_out_sum2_f[5] s_out_sum2_e[5] s_out_sum2_h[5]
+-1 1
+1- 1
+
+.names s_out_sum2_f[6] s_out_sum2_e[6] s_out_sum2_h[6]
+-1 1
+1- 1
+
+.names s_out_sum2_f[7] s_out_sum2_e[7] s_out_sum2_h[7]
+-1 1
+1- 1
+
+.names s_out_sum3_d[0] ZERO s_out_sum3[0]
+10 1
+01 1
+
+.names s_out_sum3_d[1] s_out_sum3_h[0] s_out_sum3[1]
+10 1
+01 1
+
+.names s_out_sum3_d[2] s_out_sum3_h[1] s_out_sum3[2]
+10 1
+01 1
+
+.names s_out_sum3_d[3] s_out_sum3_h[2] s_out_sum3[3]
+10 1
+01 1
+
+.names s_out_sum3_d[4] s_out_sum3_h[3] s_out_sum3[4]
+10 1
+01 1
+
+.names s_out_sum3_d[5] s_out_sum3_h[4] s_out_sum3[5]
+10 1
+01 1
+
+.names s_out_sum3_d[6] s_out_sum3_h[5] s_out_sum3[6]
+10 1
+01 1
+
+.names s_out_sum3_d[7] s_out_sum3_h[6] s_out_sum3[7]
+10 1
+01 1
+
+.names pps3[0] s_in_sum3[0] s_out_sum3_d[0]
+10 1
+01 1
+
+.names pps3[1] s_in_sum3[1] s_out_sum3_d[1]
+10 1
+01 1
+
+.names pps3[2] s_in_sum3[2] s_out_sum3_d[2]
+10 1
+01 1
+
+.names pps3[3] s_in_sum3[3] s_out_sum3_d[3]
+10 1
+01 1
+
+.names pps3[4] s_in_sum3[4] s_out_sum3_d[4]
+10 1
+01 1
+
+.names pps3[5] s_in_sum3[5] s_out_sum3_d[5]
+10 1
+01 1
+
+.names pps3[6] s_in_sum3[6] s_out_sum3_d[6]
+10 1
+01 1
+
+.names pps3[7] s_in_sum3[7] s_out_sum3_d[7]
+10 1
+01 1
+
+.names pps3[0] s_in_sum3[0] s_out_sum3_e[0]
+11 1
+
+.names pps3[1] s_in_sum3[1] s_out_sum3_e[1]
+11 1
+
+.names pps3[2] s_in_sum3[2] s_out_sum3_e[2]
+11 1
+
+.names pps3[3] s_in_sum3[3] s_out_sum3_e[3]
+11 1
+
+.names pps3[4] s_in_sum3[4] s_out_sum3_e[4]
+11 1
+
+.names pps3[5] s_in_sum3[5] s_out_sum3_e[5]
+11 1
+
+.names pps3[6] s_in_sum3[6] s_out_sum3_e[6]
+11 1
+
+.names pps3[7] s_in_sum3[7] s_out_sum3_e[7]
+11 1
+
+.names s_out_sum3_d[0] ZERO s_out_sum3_f[0]
+11 1
+
+.names s_out_sum3_d[1] s_out_sum3_h[0] s_out_sum3_f[1]
+11 1
+
+.names s_out_sum3_d[2] s_out_sum3_h[1] s_out_sum3_f[2]
+11 1
+
+.names s_out_sum3_d[3] s_out_sum3_h[2] s_out_sum3_f[3]
+11 1
+
+.names s_out_sum3_d[4] s_out_sum3_h[3] s_out_sum3_f[4]
+11 1
+
+.names s_out_sum3_d[5] s_out_sum3_h[4] s_out_sum3_f[5]
+11 1
+
+.names s_out_sum3_d[6] s_out_sum3_h[5] s_out_sum3_f[6]
+11 1
+
+.names s_out_sum3_d[7] s_out_sum3_h[6] s_out_sum3_f[7]
+11 1
+
+.names s_out_sum3_f[0] s_out_sum3_e[0] s_out_sum3_h[0]
+-1 1
+1- 1
+
+.names s_out_sum3_f[1] s_out_sum3_e[1] s_out_sum3_h[1]
+-1 1
+1- 1
+
+.names s_out_sum3_f[2] s_out_sum3_e[2] s_out_sum3_h[2]
+-1 1
+1- 1
+
+.names s_out_sum3_f[3] s_out_sum3_e[3] s_out_sum3_h[3]
+-1 1
+1- 1
+
+.names s_out_sum3_f[4] s_out_sum3_e[4] s_out_sum3_h[4]
+-1 1
+1- 1
+
+.names s_out_sum3_f[5] s_out_sum3_e[5] s_out_sum3_h[5]
+-1 1
+1- 1
+
+.names s_out_sum3_f[6] s_out_sum3_e[6] s_out_sum3_h[6]
+-1 1
+1- 1
+
+.names s_out_sum3_f[7] s_out_sum3_e[7] s_out_sum3_h[7]
+-1 1
+1- 1
+
+.end

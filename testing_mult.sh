@@ -14,38 +14,57 @@ make
 cd ..
 cd sim
 
-./simulator ../mult_outputs/mult2.blif < ../mult_inputs/test1.txt > ../mult_sim_outs/test1_sim_out.txt
+echo "Test1:"
+echo "Sim output:"
+./simulator ../mult_outputs/mult2.blif < ../mult_inputs/test1.txt 
+echo "Desired output:"
+cat ../mult_test_outs/test1_out.txt
+echo "-- "
+echo "-- "
+echo "-- "
 
-./simulator ../mult_outputs/mult3.blif < ../mult_inputs/test2.txt > ../mult_sim_outs/test2_sim_out.txt
+echo "Test2:"
+echo "Sim output:"
+./simulator ../mult_outputs/mult3.blif < ../mult_inputs/test2.txt 
+echo "Desired output:"
+cat ../mult_test_outs/test2_out.txt
+echo "-- "
+echo "-- "
+echo "-- "
 
-./simulator ../mult_outputs/mult4.blif < ../mult_inputs/test3.txt > ../mult_sim_outs/test3_sim_out.txt
+echo "Test3:"
+echo "Sim output:"
+./simulator ../mult_outputs/mult4.blif < ../mult_inputs/test3.txt 
+echo "Desired output:"
+cat ../mult_test_outs/test3_out.txt
+echo "-- "
+echo "-- "
+echo "-- "
 
-./simulator ../mult_outputs/mult5.blif < ../mult_inputs/test4.txt > ../mult_sim_outs/test4_sim_out.txt
+echo "Test4:"
+echo "Sim output:"
+./simulator ../mult_outputs/mult5.blif < ../mult_inputs/test4.txt 
+echo "Desired output:"
+cat ../mult_test_outs/test4_out.txt
+echo "-- "
+echo "-- "
+echo "-- "
 
-./simulator ../mult_outputs/mult12.blif < ../mult_inputs/test5.txt > ../mult_sim_outs/test5_sim_out.txt
+echo "Test5:"
+echo "Sim output:"
+./simulator ../mult_outputs/mult12.blif < ../mult_inputs/test5.txt 
+echo "Desired output:"
+cat ../mult_test_outs/test5_out.txt
+echo "-- "
+echo "-- "
+echo "-- "
 
-./simulator ../mult_outputs/mult16.blif < ../mult_inputs/test6.txt > ../mult_sim_outs/test6_sim_out.txt
+echo "Test6:"
+echo "Sim output:"
+./simulator ../mult_outputs/mult16.blif < ../mult_inputs/test6.txt 
+echo "Desired output:"
+cat ../mult_test_outs/test6_out.txt
+echo "-- "
+echo "-- "
+echo "-- "
 
-echo "Comparing test1"
-diff ../mult_test_outs/test1_out.txt ../mult_sim_outs/test1_sim_out.txt
-echo "\n\n"
-
-echo "Comparing test2"
-diff ../mult_test_outs/test2_out.txt ../mult_sim_outs/test2_sim_out.txt
-echo "\n\n"
-
-echo "Comparing test3"
-diff ../mult_test_outs/test3_out.txt ../mult_sim_outs/test3_sim_out.txt
-echo "\n\n"
-
-echo "Comparing test4"
-diff ../mult_test_outs/test4_out.txt ../mult_sim_outs/test4_sim_out.txt
-echo "\n\n"
-
-echo "Comparing test5"
-diff ../mult_test_outs/test5_out.txt ../mult_sim_outs/test5_sim_out.txt
-echo "\n\n"
-
-echo "Comparing test6"
-diff ../mult_test_outs/test6_out.txt ../mult_sim_outs/test6_sim_out.txt
-echo "\n\n"

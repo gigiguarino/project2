@@ -206,3 +206,66 @@ int Circuit::createMUX4Node(Node* select1, Node* select2,
   return 0;
 }
 
+
+// creates a 8-input MUX node
+// with 3 select bits
+// i created this to help with my datapath module
+int Circuit::createMUX8Node(Node* select1, Node* select2, Node* select3, 
+                            Node* input1, Node* input2, Node* input3, Node* input4,
+                            Node* input5, Node* input6, Node* input7, Node* input8,
+                            Node* output)
+{
+  assert(select1 != NULL);
+  assert(select2 != NULL);
+  assert(select3 != NULL);
+  assert(input1 != NULL);
+  assert(input2 != NULL);
+  assert(input3 != NULL);
+  assert(input4 != NULL);
+  assert(input5 != NULL);
+  assert(input6 != NULL);
+  assert(input7 != NULL);
+  assert(input8 != NULL);
+  assert(output != NULL);
+
+  // eight input mux
+  // three select bits
+  // 000 selects input1
+  // 001 selects input2
+  // 010 selects input3
+  // 011 selects input4
+  // 100 selects input5
+  // 101 selects input6
+  // 110 selects input7
+  // 111 selects input8
+    
+  output->clearTT();
+  output->clearFanin();
+
+  output->tt.setNumVars(11);
+
+  output->addFanin(select1);
+  output->addFanin(select2);
+  output->addFanin(select3);
+  output->addFanin(input8);
+  output->addFanin(input7);
+  output->addFanin(input6);
+  output->addFanin(input5);
+  output->addFanin(input4);
+  output->addFanin(input3);
+  output->addFanin(input2);
+  output->addFanin(input1);
+
+  output->tt.addEntry("000-------1");
+  output->tt.addEntry("001------1-");
+  output->tt.addEntry("010-----1--");
+  output->tt.addEntry("011----1---");
+  output->tt.addEntry("100---1----");
+  output->tt.addEntry("101--1-----");
+  output->tt.addEntry("110-1------");
+  output->tt.addEntry("1111-------");
+  
+    
+  return 0;
+}
+

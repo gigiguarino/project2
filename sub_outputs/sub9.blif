@@ -34,169 +34,169 @@
 .names b[8] b_inv[8]
 0 1
 
-.names a[0] b_inv[0] d[0]
-10 1
-01 1
-
-.names a[1] b_inv[1] d[1]
-10 1
-01 1
-
-.names a[2] b_inv[2] d[2]
-10 1
-01 1
-
-.names a[3] b_inv[3] d[3]
-10 1
-01 1
-
-.names a[4] b_inv[4] d[4]
-10 1
-01 1
-
-.names a[5] b_inv[5] d[5]
-10 1
-01 1
-
-.names a[6] b_inv[6] d[6]
-10 1
-01 1
-
-.names a[7] b_inv[7] d[7]
-10 1
-01 1
-
-.names a[8] b_inv[8] d[8]
-10 1
-01 1
-
-.names h[8] dc
+.names s_h[8] dc
 1 1
 
-.names a[0] b_inv[0] e[0]
-11 1
-
-.names a[1] b_inv[1] e[1]
-11 1
-
-.names a[2] b_inv[2] e[2]
-11 1
-
-.names a[3] b_inv[3] e[3]
-11 1
-
-.names a[4] b_inv[4] e[4]
-11 1
-
-.names a[5] b_inv[5] e[5]
-11 1
-
-.names a[6] b_inv[6] e[6]
-11 1
-
-.names a[7] b_inv[7] e[7]
-11 1
-
-.names a[8] b_inv[8] e[8]
-11 1
-
-.names d[0] ONE f[0]
-11 1
-
-.names d[1] h[0] f[1]
-11 1
-
-.names d[2] h[1] f[2]
-11 1
-
-.names d[3] h[2] f[3]
-11 1
-
-.names d[4] h[3] f[4]
-11 1
-
-.names d[5] h[4] f[5]
-11 1
-
-.names d[6] h[5] f[6]
-11 1
-
-.names d[7] h[6] f[7]
-11 1
-
-.names d[8] h[7] f[8]
-11 1
-
-.names f[0] e[0] h[0]
--1 1
-1- 1
-
-.names f[1] e[1] h[1]
--1 1
-1- 1
-
-.names f[2] e[2] h[2]
--1 1
-1- 1
-
-.names f[3] e[3] h[3]
--1 1
-1- 1
-
-.names f[4] e[4] h[4]
--1 1
-1- 1
-
-.names f[5] e[5] h[5]
--1 1
-1- 1
-
-.names f[6] e[6] h[6]
--1 1
-1- 1
-
-.names f[7] e[7] h[7]
--1 1
-1- 1
-
-.names f[8] e[8] h[8]
--1 1
-1- 1
-
-.names d[0] ONE s[0]
+.names s_d[0] ONE s[0]
 10 1
 01 1
 
-.names d[1] h[0] s[1]
+.names s_d[1] s_h[0] s[1]
 10 1
 01 1
 
-.names d[2] h[1] s[2]
+.names s_d[2] s_h[1] s[2]
 10 1
 01 1
 
-.names d[3] h[2] s[3]
+.names s_d[3] s_h[2] s[3]
 10 1
 01 1
 
-.names d[4] h[3] s[4]
+.names s_d[4] s_h[3] s[4]
 10 1
 01 1
 
-.names d[5] h[4] s[5]
+.names s_d[5] s_h[4] s[5]
 10 1
 01 1
 
-.names d[6] h[5] s[6]
+.names s_d[6] s_h[5] s[6]
 10 1
 01 1
 
-.names d[7] h[6] s[7]
+.names s_d[7] s_h[6] s[7]
 10 1
 01 1
 
-.names d[8] h[7] s[8]
+.names s_d[8] s_h[7] s[8]
 10 1
 01 1
+
+.names a[0] b_inv[0] s_d[0]
+10 1
+01 1
+
+.names a[1] b_inv[1] s_d[1]
+10 1
+01 1
+
+.names a[2] b_inv[2] s_d[2]
+10 1
+01 1
+
+.names a[3] b_inv[3] s_d[3]
+10 1
+01 1
+
+.names a[4] b_inv[4] s_d[4]
+10 1
+01 1
+
+.names a[5] b_inv[5] s_d[5]
+10 1
+01 1
+
+.names a[6] b_inv[6] s_d[6]
+10 1
+01 1
+
+.names a[7] b_inv[7] s_d[7]
+10 1
+01 1
+
+.names a[8] b_inv[8] s_d[8]
+10 1
+01 1
+
+.names a[0] b_inv[0] s_e[0]
+11 1
+
+.names a[1] b_inv[1] s_e[1]
+11 1
+
+.names a[2] b_inv[2] s_e[2]
+11 1
+
+.names a[3] b_inv[3] s_e[3]
+11 1
+
+.names a[4] b_inv[4] s_e[4]
+11 1
+
+.names a[5] b_inv[5] s_e[5]
+11 1
+
+.names a[6] b_inv[6] s_e[6]
+11 1
+
+.names a[7] b_inv[7] s_e[7]
+11 1
+
+.names a[8] b_inv[8] s_e[8]
+11 1
+
+.names s_d[0] ONE s_f[0]
+11 1
+
+.names s_d[1] s_h[0] s_f[1]
+11 1
+
+.names s_d[2] s_h[1] s_f[2]
+11 1
+
+.names s_d[3] s_h[2] s_f[3]
+11 1
+
+.names s_d[4] s_h[3] s_f[4]
+11 1
+
+.names s_d[5] s_h[4] s_f[5]
+11 1
+
+.names s_d[6] s_h[5] s_f[6]
+11 1
+
+.names s_d[7] s_h[6] s_f[7]
+11 1
+
+.names s_d[8] s_h[7] s_f[8]
+11 1
+
+.names s_f[0] s_e[0] s_h[0]
+-1 1
+1- 1
+
+.names s_f[1] s_e[1] s_h[1]
+-1 1
+1- 1
+
+.names s_f[2] s_e[2] s_h[2]
+-1 1
+1- 1
+
+.names s_f[3] s_e[3] s_h[3]
+-1 1
+1- 1
+
+.names s_f[4] s_e[4] s_h[4]
+-1 1
+1- 1
+
+.names s_f[5] s_e[5] s_h[5]
+-1 1
+1- 1
+
+.names s_f[6] s_e[6] s_h[6]
+-1 1
+1- 1
+
+.names s_f[7] s_e[7] s_h[7]
+-1 1
+1- 1
+
+.names s_f[8] s_e[8] s_h[8]
+-1 1
+1- 1
 
 .end

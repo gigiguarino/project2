@@ -76,7 +76,10 @@ class Circuit
     int createMUX2Node(Node* select1, Node* input1, Node* input2, Node* output);
     int createMUX4Node(Node* select1, Node* select2,
                        Node* input1, Node* input2, Node* input3, Node* input4, Node* output);
-    
+    int createMUX8Node(Node* select1, Node* select2, Node* select3,
+                       Node* input1, Node* input2, Node* input3, Node* input4, Node* input5, Node* input6,
+                       Node* input7, Node* input8, Node* output);
+
     // start module definitions
     int createADDModule(const string &input1, const string &input2, const string &cin, const string &output, const string &cout, unsigned int numBits);
     int createSUBModule(const string &input1, const string &input2, const string &output, unsigned int numBits);

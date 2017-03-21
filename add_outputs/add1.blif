@@ -4,25 +4,25 @@
 
 .outputs cout s[0] 
 
-.names h[0] cout
+.names s_h[0] cout
 1 1
 
-.names a[0] b[0] d[0]
+.names s_d[0] cin s[0]
 10 1
 01 1
 
-.names a[0] b[0] e[0]
+.names a[0] b[0] s_d[0]
+10 1
+01 1
+
+.names a[0] b[0] s_e[0]
 11 1
 
-.names d[0] cin f[0]
+.names s_d[0] cin s_f[0]
 11 1
 
-.names f[0] e[0] h[0]
+.names s_f[0] s_e[0] s_h[0]
 -1 1
 1- 1
-
-.names d[0] cin s[0]
-10 1
-01 1
 
 .end
