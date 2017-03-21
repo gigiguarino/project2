@@ -137,7 +137,12 @@ int main(int argc, char **argv)
         if (!c.createABSMIN9X12YModule("x", "y", "z"))
         {
           cout << "abs(min(9x, 12y)) module successfully created." << endl;
-          // your code here
+          c.setName("absmin9x12y");
+          c.setPIs("x", 0, 16);
+          c.setPIs("y", 0, 16);
+          c.setPOs("z", 0, 20);
+          //          c.print();   // optional
+          c.writeBLIF(outFilename);
         }
         else cout << "Problem creating abs(min(9x, 12y)) module." << endl;
       }
@@ -146,6 +151,28 @@ int main(int argc, char **argv)
         cout << "option -absmin9x12y requires one argument" << endl;
         usage(argv[0]);
       }
+    }
+    else if (argv[i] == string("-abs"))
+    {
+        if (i+2 < argc)
+        {
+            numBits = static_cast<unsigned>(atoi(argv[++i]));
+            outFilename = argv[++i];
+            if(!c.createABSModule("in", "out", numBits))
+            {
+              cout << "Absolute Value module successfully created." << endl;
+              c.setName("abs");
+              c.setPIs("in", 0, numBits);
+              c.setPOs("out", 0, numBits);
+              c.writeBLIF(outFilename);
+            }
+            else cout << "Problem creating ABS module." << endl;
+        }
+        else
+        {
+          cout << "option -abs requires two arguments" << endl;
+          usage(argv[0]);
+        }
     }
       else
     {

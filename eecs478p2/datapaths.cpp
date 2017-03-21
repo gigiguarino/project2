@@ -5,6 +5,9 @@
 // multiply takes in one's complement numbers
 // maybe have a conditional at the beginning to account for whether they're negative or not?
 
+// test 2 and 4 not passing
+// test 9 and 11 not passing
+// select bits 000, 110
 
 int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2, const string &output)
 {
@@ -117,7 +120,7 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
   assert(select1 != NULL);
   
   stringstream sstr2;
-  sstr2 << 19;
+  sstr2 << 15;
   name = input2 + "[" + sstr2.str() + "]";
   Node* first_bit_y = findNode(name);
   assert(first_bit_y != NULL);
@@ -138,20 +141,21 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
     
     if (i < 16)
     {
-      name = input1 + "[" + sstr.str() + "]";
-      node1 = findNode(name);
-      assert(node != NULL);
       name = input1 + "_abs[" + sstr.str() + "]";
       node2 = createNode(name);
-      createBUF1Node(node1, node2);
     }
 
     else
     {
       node1 = first_bit_x;
+      
       name = input1 + "_abs[" + sstr.str() + "]";
       node2 = createNode(name);
-      createBUF1Node(first_bit_x, node2);
+      createBUF1Node(node1, node2);
+        
+      name = input1 + "[" + sstr.str() + "]";
+      node2 = createNode(name);
+      createBUF1Node(node1, node2);
     }
   }
   
@@ -162,13 +166,24 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
     stringstream sstr;
     sstr << i;
     
-    name = input2 + "[" + sstr.str() + "]";
-    node1 = findNode(name);
-    assert(node1 != NULL);
-    
-    name = input2 + "_abs[" + sstr.str() + "]";
-    node2 = createNode(name);
-    createBUF1Node(node1, node2);
+    if (i < 16)
+    {
+      name = input2 + "_abs[" + sstr.str() + "]";
+      node2 = createNode(name);
+    }
+  
+    else
+    {
+      node1 = first_bit_y;
+      
+      name = input2 + "_abs[" + sstr.str() + "]";
+      node2 = createNode(name);
+      createBUF1Node(node1, node2);
+      
+      name = input2 + "[" + sstr.str() + "]";
+      node2 = createNode(name);
+      createBUF1Node(node1, node2);
+    }  
   }
   
   createABSModule(input2, input2 + "_abs", 20);
@@ -178,9 +193,10 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
   createSUBModule("f12y", "f9x", "diff", 20);
   
   // if the diff is negative
-  // then 9x > 12y is false
+  // then 9x > 12y is true
   // 9x > 12y can be represented by the first bit of diff
   
+
   Node* select3 = findNode("diff[19]");
   assert(select3 != NULL);
   

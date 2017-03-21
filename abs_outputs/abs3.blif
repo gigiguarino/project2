@@ -1,0 +1,83 @@
+.model abs
+
+.inputs in[0] in[1] in[2] 
+
+.outputs out[0] out[1] out[2] 
+
+.names ZERO
+
+.names out_h[2] dc
+1 1
+
+.names in[0] in[2] f1[0]
+10 1
+01 1
+
+.names in[1] in[2] f1[1]
+10 1
+01 1
+
+.names f1[2]
+
+.names in[2] f2[0]
+1 1
+
+.names f2[1]
+
+.names f2[2]
+
+.names out_d[0] ZERO out[0]
+10 1
+01 1
+
+.names out_d[1] out_h[0] out[1]
+10 1
+01 1
+
+.names out_d[2] out_h[1] out[2]
+10 1
+01 1
+
+.names f1[0] f2[0] out_d[0]
+10 1
+01 1
+
+.names f1[1] f2[1] out_d[1]
+10 1
+01 1
+
+.names f1[2] f2[2] out_d[2]
+10 1
+01 1
+
+.names f1[0] f2[0] out_e[0]
+11 1
+
+.names f1[1] f2[1] out_e[1]
+11 1
+
+.names f1[2] f2[2] out_e[2]
+11 1
+
+.names out_d[0] ZERO out_f[0]
+11 1
+
+.names out_d[1] out_h[0] out_f[1]
+11 1
+
+.names out_d[2] out_h[1] out_f[2]
+11 1
+
+.names out_f[0] out_e[0] out_h[0]
+-1 1
+1- 1
+
+.names out_f[1] out_e[1] out_h[1]
+-1 1
+1- 1
+
+.names out_f[2] out_e[2] out_h[2]
+-1 1
+1- 1
+
+.end

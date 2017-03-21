@@ -9,6 +9,7 @@ rm *
 cd ../mult_outputs
 rm *
 cd ..
+rm dp.blif
 
 # create new ones
 cd eecs478p2
@@ -33,3 +34,10 @@ echo >> ../mult_outputs/mult$i.blif
 ./project2 -mult $i ../mult_outputs/mult$i.blif
 done
 
+for i in {1..32}
+do
+echo >> ../abs_outputs/abs$i.blif
+./project2 -abs $i ../abs_outputs/abs$i.blif
+done
+
+./project2 -absmin9x12y ../dp.blif
