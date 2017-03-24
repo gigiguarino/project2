@@ -29,6 +29,11 @@ to test mult:
 - compare outcomes
 
 
+to create accurate test cases for mult:
+- create blifs?
+- create c program that transforms decimal to binary string
+- create mult blifs that have the truth tables
+
 
 
 test cases for datapath:

@@ -1,0 +1,11 @@
+.model mult1
+
+.inputs a[0] b[0] 
+.outputs s[0] s[1] 
+
+.names a[0] b[0] s[0]
+11 1
+
+.names a[0] b[0] s[1]
+
+.end
