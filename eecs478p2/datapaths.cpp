@@ -1,30 +1,18 @@
 #include "circuit.h"
 
 
-// input is two's complement
-// multiply takes in one's complement numbers
-// maybe have a conditional at the beginning to account for whether they're negative or not?
-
-// test 2 and 4 not passing
-// test 9 and 11 not passing
-// select bits 000, 110
-// 000 -- x is pos, y is pos, 9x < 12y
-// 110 -- x is neg, y is pos, 9x < 12y
 
 int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2, const string &output)
 {
   // 3 select bit mux that selects according to this:
-  // 000 -> 9x
-  // 001 -> 12y
-  // 010 -> 12y
-  // 011 -> 12y
-  // 100 -> 12y
-  // 101 -> 9x
-  // 110 -> 9x
-  // 111 -> 9x
-  // first select bit is x[numBits-1]
-  // second select bit is xor2(x[numBits-1], y[numBits-1])
-  // third select bit is 9x > 12y?
+  // 000 -> 9x --> both are positive, 12y is larger
+  // 001 -> 12y --> both are positive, 9x is larger
+  // 010 -> 12y --> only y is negative, 12y is larger
+  // 011 -> 12y --> only y is negative, 9x is larger
+  // 100 -> 12y --> both are negative, 12y is larger
+  // 101 -> 9x --> both are negative, 9x is larger
+  // 110 -> 9x --> only x is negative, 12y is larger
+  // 111 -> 9x --> only x is negative, 9x is larger
     
     
   Node* node;
@@ -60,9 +48,6 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
     node = createNode(name);
   }
   
-  // 9 times x
-  // 12 times y
-  
   Node* zeroNode = createNode("ZERO");
   createZERONode(zeroNode);
   
@@ -70,8 +55,8 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
   createONENode(oneNode);
   
   // create number nine
-  // make it twenty bits
-  for (unsigned int i = 0; i < 20; ++i)
+  // make it 16 bits
+  for (unsigned int i = 0; i < 16; ++i)
   {
     stringstream sstr;
     sstr << i;
@@ -92,8 +77,8 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
   }
   
   // create number 12
-  // make it 20 bits
-  for (unsigned int i = 0; i < 20; ++i)
+  // make it 16 bits
+  for (unsigned int i = 0; i < 16; ++i)
   {
     stringstream sstr;
     sstr << i;
@@ -112,108 +97,55 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
     }
   }
   
+  // get first bit of x
   stringstream sstr1;
   sstr1 << 15;
   name = input1 + "[" + sstr1.str() + "]";
   Node* first_bit_x = findNode(name);
   assert(first_bit_x != NULL);
 
+  // select 1 is first bit of x
   Node* select1 = findNode(name);
   assert(select1 != NULL);
-  
+
+  // get first bit of y
   stringstream sstr2;
   sstr2 << 15;
   name = input2 + "[" + sstr2.str() + "]";
   Node* first_bit_y = findNode(name);
   assert(first_bit_y != NULL);
 
-
+  // select 2 is first bit of x XOR first bit of y
   Node* select2 = createNode("sel2");
   createXOR2Node(first_bit_x, first_bit_y, select2);
 
   Node* node1;
   Node* node2;
 
-  // create absolute values of inputs
-  // make them both 20 bits
-  for (unsigned int i = 0; i < 20; ++i)
-  {
-    stringstream sstr;
-    sstr << i;
-    
-    if (i < 16)
-    {
-      // create new abs nodes for input1
-      name = input1 + "_abs[" + sstr.str() + "]";
-      node2 = createNode(name);
-    }
+  // take absolute values of both inputs
+  // need to do this for multiplication
+  // muliplier takes in unsigned values
+  createABSModule(input1, "one", 16);
+  createABSModule(input2, "two", 16);
 
-    else
-    {
-      // two's complement carries over
-      node1 = first_bit_x;
-      
-      // create new abs nodes for input1
-      name = input1 + "_abs[" + sstr.str() + "]";
-      node2 = createNode(name);
-      createBUF1Node(node1, node2);
-      
-      // fill in the rest of input1 so it's 20 bits   
-      name = input1 + "[" + sstr.str() + "]";
-      node2 = createNode(name);
-      createBUF1Node(node1, node2);
-    }
-  }
   
-  createABSModule(input1, input1 + "_abs", 20);
-  
-  for (unsigned int i = 0; i < 20; ++i)
-  {
-    stringstream sstr;
-    sstr << i;
-    
-    if (i < 16)
-    {
-      // create new abs nodes for input2
-	    name = input2 + "_abs[" + sstr.str() + "]";
-      node2 = createNode(name);
-    }
-  
-    else
-    {
-      // two's complement carries over
-      node1 = first_bit_y;
-   
-      // new abs nodes for input2   
-      name = input2 + "_abs[" + sstr.str() + "]";
-      node2 = createNode(name);
-      createBUF1Node(node1, node2);
-      
-      // new input2 nodes to fill 20 bits
-      name = input2 + "[" + sstr.str() + "]";
-      node2 = createNode(name);
-      createBUF1Node(node1, node2);
-    }  
-  }
-  
-  createABSModule(input2, input2 + "_abs", 20);
-  
-  // 9x
-  createMULTModule(input1 + "_abs", "nine", "f9x", 20);
-  //12y
-  createMULTModule(input2 + "_abs", "twelve", "f12y", 20);
-  createSUBModule("f12y", "f9x", "diff", 20);
+  // 9 * abs(x)
+  createMULTModule("one", "nine", "f9x", 16);
+  //12 * abs(y)
+  createMULTModule("two", "twelve", "f12y", 16);
+
+  // subtract 9x from 12y to see who is larger
+  createSUBModule("f12y", "f9x", "diff", 32);
   
   // if the diff is negative
   // then 9x > 12y is true
   // 9x > 12y can be represented by the first bit of diff
   
-
-  Node* select3 = findNode("diff[19]");
+  // select three is 9x > 12y 
+  Node* select3 = findNode("diff[31]");
   assert(select3 != NULL);
-  
-  Node* out;
 
+  Node* out;
   for (unsigned int i = 0; i < 20; ++i)
   {
     // node1 = 9x[]
@@ -234,11 +166,13 @@ int Circuit::createABSMIN9X12YModule(const string &input1, const string &input2,
     name = output + "[" + sstr.str() + "]";
     out = findNode(name);
     assert(out != NULL);
-
-    createMUX8Node(select1, select2, select3, node1, node2, node2, node2, node2, node1, node1, node1, out);
+    
+    // use select bits to select correct output
+    createMUX8Node(select1, select2, select3, 
+                   node1, node2, node2, node2, 
+                   node2, node1, node1, node1, out);
   }
-  
-  
+ 
   return 0;
 }
 

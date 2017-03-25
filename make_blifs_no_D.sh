@@ -1,10 +1,10 @@
 
 
-cd new_add_blifs
-rm *
-cd ../new_sub_blifs
-rm *
-cd ../new_mult_blifs
+#cd new_add_blifs
+#rm *
+#cd ../new_sub_blifs
+#rm *
+cd new_mult_blifs
 rm * 
 cd ..
 
@@ -24,7 +24,7 @@ g++ make_blifs.cpp -o make_blif
   #./make_blif $i sub > new_sub_blifs/sub$i.blif
 #done
 
-for i in {1..16}
+for i in {1..9}
 do
   echo "making mult$i.blif..."
   echo >> new_mult_blifs/mult$i.blif

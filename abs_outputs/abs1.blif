@@ -9,21 +9,21 @@
 .names out_h[0] dc
 1 1
 
-.names f1[0]
-
-.names in[0] f2[0]
-1 1
-
 .names out_d[0] ZERO out[0]
 10 1
 01 1
 
-.names f1[0] f2[0] out_d[0]
+.names out_f1[0] out_f2[0] out_d[0]
 10 1
 01 1
 
-.names f1[0] f2[0] out_e[0]
+.names out_f1[0] out_f2[0] out_e[0]
 11 1
+
+.names out_f1[0]
+
+.names in[0] out_f2[0]
+1 1
 
 .names out_d[0] ZERO out_f[0]
 11 1

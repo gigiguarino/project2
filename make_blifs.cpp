@@ -4,13 +4,14 @@
 #include <cmath>
 #include <deque>
 #include <sstream>
+#include <stdlib.h>
 using namespace std;
 
 int main(int argc, char *argv[]){
   
   if (argc != 3){
     cerr << "error: number of inputs" << endl;
-    exit(1);
+    return 0;
   }
   
   int numbits = atoi(argv[1]);
@@ -434,21 +435,31 @@ int main(int argc, char *argv[]){
   else if (type == "mult")
   {
     for (int i = 0; i < 2*numbits; i++){
-      stringstream sstr;
-      sstr << i;
-      cout << ".names ";
-      cout << input << "";
-      cout << "s[" + sstr.str() + "]\n";
-      while (!outputs[i].empty()){
-        if (outputs[i].front() == ""){
-          outputs[i].pop_front();
+      if (outputs[i].front() != "" && !outputs[i].empty())
+      { 
+        stringstream sstr;
+        sstr << i;
+        cout << ".names ";
+        cout << input << "";
+        cout << "s[" + sstr.str() + "]\n";
+        while (!outputs[i].empty()){
+          if (outputs[i].front() == ""){
+            outputs[i].pop_front();
+          }
+          else{
+            cout << outputs[i].front() << " 1\n";
+            outputs[i].pop_front();
+          }
         }
-        else{
-          cout << outputs[i].front() << " 1\n";
+        cout << endl;
+      }
+      else
+      {
+        if (outputs[i].front() == "")
+        {
           outputs[i].pop_front();
         }
       }
-      cout << endl;
     }
   }
   
@@ -456,21 +467,31 @@ int main(int argc, char *argv[]){
   {
     for (int i = 0; i < 20; i++)
     {
-      stringstream sstr;
-      sstr << i;
-      cout << ".names ";
-      cout << input << "";
-      cout << "y[" + sstr.str() + "]\n";
-      while (!outputs[i].empty()){
-        if (outputs[i].front() == ""){
-          outputs[i].pop_front();
+      if (outputs[i].front() != "" && !outputs[i].empty()) 
+      {
+        stringstream sstr;
+        sstr << i;
+        cout << ".names ";
+        cout << input << "";
+        cout << "y[" + sstr.str() + "]\n";
+        while (!outputs[i].empty()){
+          if (outputs[i].front() == ""){
+            outputs[i].pop_front();
+          }
+          else{
+            cout << outputs[i].front() << " 1\n";
+            outputs[i].pop_front();
+          }
         }
-        else{
-          cout << outputs[i].front() << " 1\n";
+        cout << endl;
+      }
+      else
+      {
+        if (outputs[i].front() == "")
+        {
           outputs[i].pop_front();
         }
       }
-      cout << endl;
     }
   }
   

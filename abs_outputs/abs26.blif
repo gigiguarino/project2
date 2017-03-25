@@ -9,161 +9,6 @@
 .names out_h[25] dc
 1 1
 
-.names in[0] in[25] f1[0]
-10 1
-01 1
-
-.names in[10] in[25] f1[10]
-10 1
-01 1
-
-.names in[11] in[25] f1[11]
-10 1
-01 1
-
-.names in[12] in[25] f1[12]
-10 1
-01 1
-
-.names in[13] in[25] f1[13]
-10 1
-01 1
-
-.names in[14] in[25] f1[14]
-10 1
-01 1
-
-.names in[15] in[25] f1[15]
-10 1
-01 1
-
-.names in[16] in[25] f1[16]
-10 1
-01 1
-
-.names in[17] in[25] f1[17]
-10 1
-01 1
-
-.names in[18] in[25] f1[18]
-10 1
-01 1
-
-.names in[19] in[25] f1[19]
-10 1
-01 1
-
-.names in[1] in[25] f1[1]
-10 1
-01 1
-
-.names in[20] in[25] f1[20]
-10 1
-01 1
-
-.names in[21] in[25] f1[21]
-10 1
-01 1
-
-.names in[22] in[25] f1[22]
-10 1
-01 1
-
-.names in[23] in[25] f1[23]
-10 1
-01 1
-
-.names in[24] in[25] f1[24]
-10 1
-01 1
-
-.names f1[25]
-
-.names in[2] in[25] f1[2]
-10 1
-01 1
-
-.names in[3] in[25] f1[3]
-10 1
-01 1
-
-.names in[4] in[25] f1[4]
-10 1
-01 1
-
-.names in[5] in[25] f1[5]
-10 1
-01 1
-
-.names in[6] in[25] f1[6]
-10 1
-01 1
-
-.names in[7] in[25] f1[7]
-10 1
-01 1
-
-.names in[8] in[25] f1[8]
-10 1
-01 1
-
-.names in[9] in[25] f1[9]
-10 1
-01 1
-
-.names in[25] f2[0]
-1 1
-
-.names f2[10]
-
-.names f2[11]
-
-.names f2[12]
-
-.names f2[13]
-
-.names f2[14]
-
-.names f2[15]
-
-.names f2[16]
-
-.names f2[17]
-
-.names f2[18]
-
-.names f2[19]
-
-.names f2[1]
-
-.names f2[20]
-
-.names f2[21]
-
-.names f2[22]
-
-.names f2[23]
-
-.names f2[24]
-
-.names f2[25]
-
-.names f2[2]
-
-.names f2[3]
-
-.names f2[4]
-
-.names f2[5]
-
-.names f2[6]
-
-.names f2[7]
-
-.names f2[8]
-
-.names f2[9]
-
 .names out_d[0] ZERO out[0]
 10 1
 01 1
@@ -268,187 +113,342 @@
 10 1
 01 1
 
-.names f1[0] f2[0] out_d[0]
+.names out_f1[0] out_f2[0] out_d[0]
 10 1
 01 1
 
-.names f1[10] f2[10] out_d[10]
+.names out_f1[10] out_f2[10] out_d[10]
 10 1
 01 1
 
-.names f1[11] f2[11] out_d[11]
+.names out_f1[11] out_f2[11] out_d[11]
 10 1
 01 1
 
-.names f1[12] f2[12] out_d[12]
+.names out_f1[12] out_f2[12] out_d[12]
 10 1
 01 1
 
-.names f1[13] f2[13] out_d[13]
+.names out_f1[13] out_f2[13] out_d[13]
 10 1
 01 1
 
-.names f1[14] f2[14] out_d[14]
+.names out_f1[14] out_f2[14] out_d[14]
 10 1
 01 1
 
-.names f1[15] f2[15] out_d[15]
+.names out_f1[15] out_f2[15] out_d[15]
 10 1
 01 1
 
-.names f1[16] f2[16] out_d[16]
+.names out_f1[16] out_f2[16] out_d[16]
 10 1
 01 1
 
-.names f1[17] f2[17] out_d[17]
+.names out_f1[17] out_f2[17] out_d[17]
 10 1
 01 1
 
-.names f1[18] f2[18] out_d[18]
+.names out_f1[18] out_f2[18] out_d[18]
 10 1
 01 1
 
-.names f1[19] f2[19] out_d[19]
+.names out_f1[19] out_f2[19] out_d[19]
 10 1
 01 1
 
-.names f1[1] f2[1] out_d[1]
+.names out_f1[1] out_f2[1] out_d[1]
 10 1
 01 1
 
-.names f1[20] f2[20] out_d[20]
+.names out_f1[20] out_f2[20] out_d[20]
 10 1
 01 1
 
-.names f1[21] f2[21] out_d[21]
+.names out_f1[21] out_f2[21] out_d[21]
 10 1
 01 1
 
-.names f1[22] f2[22] out_d[22]
+.names out_f1[22] out_f2[22] out_d[22]
 10 1
 01 1
 
-.names f1[23] f2[23] out_d[23]
+.names out_f1[23] out_f2[23] out_d[23]
 10 1
 01 1
 
-.names f1[24] f2[24] out_d[24]
+.names out_f1[24] out_f2[24] out_d[24]
 10 1
 01 1
 
-.names f1[25] f2[25] out_d[25]
+.names out_f1[25] out_f2[25] out_d[25]
 10 1
 01 1
 
-.names f1[2] f2[2] out_d[2]
+.names out_f1[2] out_f2[2] out_d[2]
 10 1
 01 1
 
-.names f1[3] f2[3] out_d[3]
+.names out_f1[3] out_f2[3] out_d[3]
 10 1
 01 1
 
-.names f1[4] f2[4] out_d[4]
+.names out_f1[4] out_f2[4] out_d[4]
 10 1
 01 1
 
-.names f1[5] f2[5] out_d[5]
+.names out_f1[5] out_f2[5] out_d[5]
 10 1
 01 1
 
-.names f1[6] f2[6] out_d[6]
+.names out_f1[6] out_f2[6] out_d[6]
 10 1
 01 1
 
-.names f1[7] f2[7] out_d[7]
+.names out_f1[7] out_f2[7] out_d[7]
 10 1
 01 1
 
-.names f1[8] f2[8] out_d[8]
+.names out_f1[8] out_f2[8] out_d[8]
 10 1
 01 1
 
-.names f1[9] f2[9] out_d[9]
+.names out_f1[9] out_f2[9] out_d[9]
 10 1
 01 1
 
-.names f1[0] f2[0] out_e[0]
+.names out_f1[0] out_f2[0] out_e[0]
 11 1
 
-.names f1[10] f2[10] out_e[10]
+.names out_f1[10] out_f2[10] out_e[10]
 11 1
 
-.names f1[11] f2[11] out_e[11]
+.names out_f1[11] out_f2[11] out_e[11]
 11 1
 
-.names f1[12] f2[12] out_e[12]
+.names out_f1[12] out_f2[12] out_e[12]
 11 1
 
-.names f1[13] f2[13] out_e[13]
+.names out_f1[13] out_f2[13] out_e[13]
 11 1
 
-.names f1[14] f2[14] out_e[14]
+.names out_f1[14] out_f2[14] out_e[14]
 11 1
 
-.names f1[15] f2[15] out_e[15]
+.names out_f1[15] out_f2[15] out_e[15]
 11 1
 
-.names f1[16] f2[16] out_e[16]
+.names out_f1[16] out_f2[16] out_e[16]
 11 1
 
-.names f1[17] f2[17] out_e[17]
+.names out_f1[17] out_f2[17] out_e[17]
 11 1
 
-.names f1[18] f2[18] out_e[18]
+.names out_f1[18] out_f2[18] out_e[18]
 11 1
 
-.names f1[19] f2[19] out_e[19]
+.names out_f1[19] out_f2[19] out_e[19]
 11 1
 
-.names f1[1] f2[1] out_e[1]
+.names out_f1[1] out_f2[1] out_e[1]
 11 1
 
-.names f1[20] f2[20] out_e[20]
+.names out_f1[20] out_f2[20] out_e[20]
 11 1
 
-.names f1[21] f2[21] out_e[21]
+.names out_f1[21] out_f2[21] out_e[21]
 11 1
 
-.names f1[22] f2[22] out_e[22]
+.names out_f1[22] out_f2[22] out_e[22]
 11 1
 
-.names f1[23] f2[23] out_e[23]
+.names out_f1[23] out_f2[23] out_e[23]
 11 1
 
-.names f1[24] f2[24] out_e[24]
+.names out_f1[24] out_f2[24] out_e[24]
 11 1
 
-.names f1[25] f2[25] out_e[25]
+.names out_f1[25] out_f2[25] out_e[25]
 11 1
 
-.names f1[2] f2[2] out_e[2]
+.names out_f1[2] out_f2[2] out_e[2]
 11 1
 
-.names f1[3] f2[3] out_e[3]
+.names out_f1[3] out_f2[3] out_e[3]
 11 1
 
-.names f1[4] f2[4] out_e[4]
+.names out_f1[4] out_f2[4] out_e[4]
 11 1
 
-.names f1[5] f2[5] out_e[5]
+.names out_f1[5] out_f2[5] out_e[5]
 11 1
 
-.names f1[6] f2[6] out_e[6]
+.names out_f1[6] out_f2[6] out_e[6]
 11 1
 
-.names f1[7] f2[7] out_e[7]
+.names out_f1[7] out_f2[7] out_e[7]
 11 1
 
-.names f1[8] f2[8] out_e[8]
+.names out_f1[8] out_f2[8] out_e[8]
 11 1
 
-.names f1[9] f2[9] out_e[9]
+.names out_f1[9] out_f2[9] out_e[9]
 11 1
+
+.names in[0] in[25] out_f1[0]
+10 1
+01 1
+
+.names in[10] in[25] out_f1[10]
+10 1
+01 1
+
+.names in[11] in[25] out_f1[11]
+10 1
+01 1
+
+.names in[12] in[25] out_f1[12]
+10 1
+01 1
+
+.names in[13] in[25] out_f1[13]
+10 1
+01 1
+
+.names in[14] in[25] out_f1[14]
+10 1
+01 1
+
+.names in[15] in[25] out_f1[15]
+10 1
+01 1
+
+.names in[16] in[25] out_f1[16]
+10 1
+01 1
+
+.names in[17] in[25] out_f1[17]
+10 1
+01 1
+
+.names in[18] in[25] out_f1[18]
+10 1
+01 1
+
+.names in[19] in[25] out_f1[19]
+10 1
+01 1
+
+.names in[1] in[25] out_f1[1]
+10 1
+01 1
+
+.names in[20] in[25] out_f1[20]
+10 1
+01 1
+
+.names in[21] in[25] out_f1[21]
+10 1
+01 1
+
+.names in[22] in[25] out_f1[22]
+10 1
+01 1
+
+.names in[23] in[25] out_f1[23]
+10 1
+01 1
+
+.names in[24] in[25] out_f1[24]
+10 1
+01 1
+
+.names out_f1[25]
+
+.names in[2] in[25] out_f1[2]
+10 1
+01 1
+
+.names in[3] in[25] out_f1[3]
+10 1
+01 1
+
+.names in[4] in[25] out_f1[4]
+10 1
+01 1
+
+.names in[5] in[25] out_f1[5]
+10 1
+01 1
+
+.names in[6] in[25] out_f1[6]
+10 1
+01 1
+
+.names in[7] in[25] out_f1[7]
+10 1
+01 1
+
+.names in[8] in[25] out_f1[8]
+10 1
+01 1
+
+.names in[9] in[25] out_f1[9]
+10 1
+01 1
+
+.names in[25] out_f2[0]
+1 1
+
+.names out_f2[10]
+
+.names out_f2[11]
+
+.names out_f2[12]
+
+.names out_f2[13]
+
+.names out_f2[14]
+
+.names out_f2[15]
+
+.names out_f2[16]
+
+.names out_f2[17]
+
+.names out_f2[18]
+
+.names out_f2[19]
+
+.names out_f2[1]
+
+.names out_f2[20]
+
+.names out_f2[21]
+
+.names out_f2[22]
+
+.names out_f2[23]
+
+.names out_f2[24]
+
+.names out_f2[25]
+
+.names out_f2[2]
+
+.names out_f2[3]
+
+.names out_f2[4]
+
+.names out_f2[5]
+
+.names out_f2[6]
+
+.names out_f2[7]
+
+.names out_f2[8]
+
+.names out_f2[9]
 
 .names out_d[0] ZERO out_f[0]
 11 1
