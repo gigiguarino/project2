@@ -1,0 +1,154 @@
+.model adder
+
+.inputs a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] b[0] b[1] b[2] b[3] b[4] b[5] b[6] b[7] cin 
+
+.outputs cout s[0] s[1] s[2] s[3] s[4] s[5] s[6] s[7] 
+
+.names s_h[7] cout
+1 1
+
+.names s_d[0] cin s[0]
+10 1
+01 1
+
+.names s_d[1] s_h[0] s[1]
+10 1
+01 1
+
+.names s_d[2] s_h[1] s[2]
+10 1
+01 1
+
+.names s_d[3] s_h[2] s[3]
+10 1
+01 1
+
+.names s_d[4] s_h[3] s[4]
+10 1
+01 1
+
+.names s_d[5] s_h[4] s[5]
+10 1
+01 1
+
+.names s_d[6] s_h[5] s[6]
+10 1
+01 1
+
+.names s_d[7] s_h[6] s[7]
+10 1
+01 1
+
+.names a[0] b[0] s_d[0]
+10 1
+01 1
+
+.names a[1] b[1] s_d[1]
+10 1
+01 1
+
+.names a[2] b[2] s_d[2]
+10 1
+01 1
+
+.names a[3] b[3] s_d[3]
+10 1
+01 1
+
+.names a[4] b[4] s_d[4]
+10 1
+01 1
+
+.names a[5] b[5] s_d[5]
+10 1
+01 1
+
+.names a[6] b[6] s_d[6]
+10 1
+01 1
+
+.names a[7] b[7] s_d[7]
+10 1
+01 1
+
+.names a[0] b[0] s_e[0]
+11 1
+
+.names a[1] b[1] s_e[1]
+11 1
+
+.names a[2] b[2] s_e[2]
+11 1
+
+.names a[3] b[3] s_e[3]
+11 1
+
+.names a[4] b[4] s_e[4]
+11 1
+
+.names a[5] b[5] s_e[5]
+11 1
+
+.names a[6] b[6] s_e[6]
+11 1
+
+.names a[7] b[7] s_e[7]
+11 1
+
+.names s_d[0] cin s_f[0]
+11 1
+
+.names s_d[1] s_h[0] s_f[1]
+11 1
+
+.names s_d[2] s_h[1] s_f[2]
+11 1
+
+.names s_d[3] s_h[2] s_f[3]
+11 1
+
+.names s_d[4] s_h[3] s_f[4]
+11 1
+
+.names s_d[5] s_h[4] s_f[5]
+11 1
+
+.names s_d[6] s_h[5] s_f[6]
+11 1
+
+.names s_d[7] s_h[6] s_f[7]
+11 1
+
+.names s_f[0] s_e[0] s_h[0]
+-1 1
+1- 1
+
+.names s_f[1] s_e[1] s_h[1]
+-1 1
+1- 1
+
+.names s_f[2] s_e[2] s_h[2]
+-1 1
+1- 1
+
+.names s_f[3] s_e[3] s_h[3]
+-1 1
+1- 1
+
+.names s_f[4] s_e[4] s_h[4]
+-1 1
+1- 1
+
+.names s_f[5] s_e[5] s_h[5]
+-1 1
+1- 1
+
+.names s_f[6] s_e[6] s_h[6]
+-1 1
+1- 1
+
+.names s_f[7] s_e[7] s_h[7]
+-1 1
+1- 1
+
+.end
